@@ -1,0 +1,23 @@
+{
+  "name": "aamc-styles",
+  "version": "0.0.0",
+  "description": "\"his project is intended to serve as the aamc skinning of twitter bootstrap 3. It will contain only less styles\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.aamc.org/ssheftel/aamc-styles.git"
+  },
+  "author": "Samuel Sheftel",
+  "license": "ISC",
+  "devDependencies": {
+    "load-grunt-tasks": "~0.4.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-less": "~0.11.1",
+    "grunt-contrib-copy": "~0.5.0"
+  }
+}
