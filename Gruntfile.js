@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 			release: 'release',
 			build: 'build',
 			bower_components: 'bower_components',
-			styles_name: 'aamc-styles'
+			main_style: 'aamc-styles'
 		},
 		connect: {
 			options: {
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 					optimization: 2,
 					sourceMap: true,
 					modifyVars: {
-						bower_components_path: '"../../bower_components"',
+						bower_components_path: '"../bower_components"',
 						"icon-font-path": '"/fonts/"',
 						"fa-font-path": '"/fonts"'
 					}
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '<%= paths.src %>/less',
-					src: '<%= paths.styles_name %>.less',
+					src: '<%= paths.main_style %>.less',
 					dest: '<%= paths.release %>/css/',
 					ext: '.css'
 				}]
