@@ -41,9 +41,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= paths.src %>/less',
+					cwd: '<%= paths.src %>/',
 					src: 'aamc-styles.less',
-					dest: '<%= paths.build %>/css/',
+					dest: '<%= paths.build %>/',
 					ext: '.css'
 					//rename: function(src, dest) {return dest;}
 				}]
@@ -85,9 +85,9 @@ module.exports = function(grunt) {
 			},
 			less_release: {
 				expand: true,
-				cwd: '<%= paths.src %>/less/',
+				cwd: '<%= paths.src %>/',
 				src: '**/*.less',
-				dest: '<%= paths.release %>/less/'
+				dest: '<%= paths.release %>/'
 			}
 		},
 		watch: {
