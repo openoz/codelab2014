@@ -1,0 +1,17 @@
+// ../../ should be the bower_components OR vendor directory
+// Note the assumed location of fonts is ../fonts relative to the compiled css file.
+// if fonts are located elsewhere simple set the @icon-font-path and @fa-font-path variables anywhere after the import of
+// this less file. @icon-font-path is a bootstrap variable while @fa-font-path is a font awesome variable
+
+@bower_components_path: "../../";
+
+
+@import "@{bower_components_path}/bootstrap/less/bootstrap.less";
+@icon-font-path: "@{bower_components_path}/bootstrap/dist/fonts/";
+
+
+@import "@{bower_components_path}/font-awesome/less/font-awesome.less";
+@fa-font-path: "@{bower_components_path}/font-awesome/fonts";
+
+//
+@import "aamc-styles/index.less";
