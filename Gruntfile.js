@@ -8,7 +8,9 @@ module.exports = function(grunt) {
 		paths: {
 			src: 'src',
 			release: 'release',
-			build: 'build'
+			build: 'build',
+			bower_components: 'bower_components',
+			styles_name: 'aamc-styles'
 		},
 		connect: {
 			options: {
@@ -17,7 +19,7 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				options: {
-					port: 8000,
+					port: 8888,
 					base: '<%= paths.build %>',
 					open: true,
 					livereload: true
@@ -30,36 +32,63 @@ module.exports = function(grunt) {
 					compress: false,
 					yuicompress: false,
 					optimization: 2,
-					sourceMap: true
+					sourceMap: true,
+					modifyVars: {
+						bower_components_path: '"../../bower_components"',
+						"icon-font-path": '"/fonts/"',
+						"fa-font-path": '"/fonts"'
+					}
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= paths.src %>',
-					src: '**/index.less',
-					dest: '<%= paths.build %>',
-					ext: '.css',
-					rename: function(src, dest) {
-						console.log(src);
-						console.log(dest);
-						console.log('\n');
-						return dest;
-					}
+					cwd: '<%= paths.src %>/less',
+					src: 'aamc-styles.less',
+					dest: '<%= paths.build %>/css/',
+					ext: '.css'
+					//rename: function(src, dest) {return dest;}
 				}]
-			}
+			}/*,
+			release: {
+				options: {
+					compress: true,
+					yuicompress: true,
+					sourceMap: false,
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= paths.src %>/less',
+					src: '<%= paths.styles_name %>.less',
+					dest: '<%= paths.release %>/css/',
+					ext: '.css'
+				}]
+			}*/
 		},
 		copy: {
-			options: {
-				process: function(content, srcpath) {
-					return grunt.template.process(content);
-				}
-			},
 			html: {
+				options: {
+					process: function(content, srcpath) {
+						return grunt.template.process(content);
+					}
+				},
 				expand: true,
 				cwd: '<%= paths.src %>/',
 				src: '**/*.html',
 				dest: '<%= paths.build %>/',
-				filter: 'isFile',
+				filter: 'isFile'
 			},
+			fonts_dev: {
+				expand: true,
+				src: ['<%= paths.bower_components %>/bootstrap/fonts/*', '<%= paths.bower_components%>/font-awesome/fonts/*'],
+				flatten: true,
+				filter: 'isFile',
+				dest: '<%= paths.build %>/fonts/'
+			},
+			less_release: {
+				expand: true,
+				cwd: '<%= paths.src %>/less/',
+				src: '**/*.less',
+				dest: '<%= paths.release %>/less/'
+			}
 		},
 		watch: {
 			options: {
@@ -85,4 +114,6 @@ module.exports = function(grunt) {
 	//
 	grunt.initConfig(config);
 	grunt.registerTask('default', ['connect:dev', 'watch']);
+	grunt.registerTask('dev-watch', ['copy:fonts_dev', 'connect:dev', 'watch']);
+	grunt.registerTask('release', ['copy:less_release']);
 };
