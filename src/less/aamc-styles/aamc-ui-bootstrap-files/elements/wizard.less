@@ -1,0 +1,61 @@
+/*Wizard*/
+.wizard-row{position:relative ;}
+.wizard-row .fuelux{position:absolute;}
+
+.block-wizard{
+	padding:0;
+}
+
+.block-wizard .step-content{
+	padding:20px 20px;
+}
+
+.fuelux .wizard {
+	box-shadow:none;
+	border-radius:0;
+	-webkit-border-radius:0;
+	border:0;
+	border-bottom:1px solid #E2E2E2;
+	background:#FFF;
+}
+
+.fuelux .wizard ul li.active {
+	background:#FFF;
+	color: @link-color;
+}
+
+.fuelux .wizard ul li.complete {
+	color:#fff;
+	background: @primary-color;
+}
+
+.fuelux .wizard ul li.complete:hover {
+	background: @primary-color - 20%;
+}
+
+.fuelux .wizard ul li.complete:hover .chevron:before{
+    border-left-color: @primary-color - 20%;
+}
+
+.fuelux .wizard ul li.complete .chevron{
+	border-left-color: @primary-color - 25%;
+}
+
+.fuelux .wizard ul li.complete .chevron:before {
+    border-left: 14px solid @primary-color;
+}
+
+.fuelux .wizard ul li.active .chevron:before {
+    border-left: 14px solid #FFF;
+}
+
+.fuelux .wizard ul li:first-child {border-radius:0;-webkit-border-radius:0;}
+.fuelux .wizard ul li {font-size:15px;}
+.fuelux [class^="icon-"], .fuelux [class*=" icon-"]{
+  background-image: url("../js/bootstrap.wysihtml5/lib/img/glyphicons-halflings-white.png");
+}
+.fuelux .icon-arrow-left{background-position: -240px -95px;}
+.fuelux .icon-arrow-right {background-position: -264px -95px;}
+@media (max-width: 767px) {
+  .wizard-row .fuelux{position:static;}
+}

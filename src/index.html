@@ -5,11 +5,99 @@
 	<link rel="stylesheet" type="text/css" href="css/aamc-styles.css">
 </head>
 <body>
-<button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-cloud-download"></span> Star
-</button>
-<button type="button" class="btn btn-default btn-lg">
-  <i class="fa fa-bomb"></i> fa-bomb
-</button>
+
+<div>
+  <div class="topbar navbar navbar-default" id="head-nav">
+    <div class="container-fluid">
+      <div class="navbar-header"></div>
+
+      <div class="navbar-collapse collapse">
+        <div class="sidebar-logo">
+          <div class="logo">
+            <a href="#">AAMC.org</a>
+          </div>
+        </div>
+
+        <ul class="nav navbar-nav horizontal">
+          <li><a href="#">Home</a></li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Scores</a>
+
+            <ul class="dropdown-menu col-menu-2">
+              <li class=""><a class="" href="">After January 31, 2015</a></li>
+
+              <li class=""><a class="" href="">Before January 31, 2015</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Reports</a>
+
+            <ul class="dropdown-menu col-menu-2">
+              <li class="col-sm-6 no-padding">
+                <ul>
+                  <li class="dropdown-header">Actions</li>
+                </ul>
+              </li>
+
+              <li class="col-sm-6 no-padding">
+                <ul>
+                  <li class="dropdown-header">History</li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="dropdown-menu">
+              <li><a href="#">Help</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav not-nav"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="cl-wrapper">
+    <div class="container-fluid" id="pcont"></div>
+
+    <div class="starter-template">
+      <div class="cl-mcont">
+        <div class="page-head">
+          <h1>AAMC Division<small>&nbsp; App Name</small></h1>
+
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+
+            <li class="active">breadcrumb</li>
+          </ol>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 nopadding">
+            <div class="score-history-header">
+              <h2>MCAT Exam Scores</h2>
+              <h3>After January 31, 2015</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 nopadding">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="text-muted text-center hidden-sm hidden-xs">MCAT® Home | AAMC.org | AMCAS® Home | Contact Us<br>
+        Copyright ©1995-2014 | Association of American Medical Colleges | Terms and Conditions | All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
