@@ -1,83 +1,75 @@
-@import "variables.less";
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
 
-//-----------------------------------  Legacy  --------------------------------
+/**
+ * Import of the aamc-styles. 
+ */
+ // Core variables and mixins
 
-/* import variables as defined in mcat-srs project */
-@import "variables-from-srs.less";
 
+@import 'variables.less';
 
-/* import of old aamc-ui-bootstrap-files */
+.navbar, .box-shadow{
+  -webkit-box-shadow: 1px 2px 4px #ccc;
+  -moz-box-shadow: 1px 2px 4px #ccc;
+  box-shadow: 1px 2px 4px #616161;
+}
 
-/*LESS CSS pre-processor*/
-@import "aamc-ui-bootstrap-files/elements.less";
+.navbar-nav > li > a {
+  padding-top: (@navbar-height/2) + 7;
 
-/*CONFIG AND GENERAL STYLE -compiled 4/8/2014*/
-@import "aamc-ui-bootstrap-files/config.less";
-@import "aamc-ui-bootstrap-files/general.less";
-@import "aamc-ui-bootstrap-files/helpers.less";
-@import "aamc-ui-bootstrap-files/typography.less";
+  @media (max-width: @screen-md-max) {
+    padding: 5px 5px 5px 5px;
+  }
+}
 
-/*HEADER - compiled 4/8/2014*/
-@import "aamc-ui-bootstrap-files/dropdown-menu.less";
-@import "aamc-ui-bootstrap-files/navbar.less";
-@import "aamc-ui-bootstrap-files/page-head.less";
-@import "aamc-ui-bootstrap-files/page-aside.less";
-@import "aamc-ui-bootstrap-files/profile-menu.less";
+.footer-shadow{
+  -webkit-box-shadow: 0px -4px 2px #ccc;
+  -moz-box-shadow:    0px -4px 2px #ccc;
+  box-shadow:         0px -4px 2px #ccc;  
+}
 
-/*BODY - compiled 4/8/2014*/
-@import "aamc-ui-bootstrap-files/block-panels.less";
-@import "aamc-ui-bootstrap-files/boxed.less";
-@import "aamc-ui-bootstrap-files/forms.less";
-@import "aamc-ui-bootstrap-files/main-container.less";
-@import "aamc-ui-bootstrap-files/sidebar.less";
-@import "aamc-ui-bootstrap-files/topbar.less";
+.footer{  
+  padding-top:5px;
+  margin-bottom: 15px;
+  vertical-align: middle;
+}
 
-/*PAGES*/
-@import "aamc-ui-bootstrap-files/404.less";
-@import "aamc-ui-bootstrap-files/gallery.less";
-@import "aamc-ui-bootstrap-files/login.less";
-@import "aamc-ui-bootstrap-files/page-email.less";
-@import "aamc-ui-bootstrap-files/page-code-editor.less";
-@import "aamc-ui-bootstrap-files/page-profile.less";
-@import "aamc-ui-bootstrap-files/page-search.less";
-@import "aamc-ui-bootstrap-files/sign-up.less";
+.footer ul li {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-/*ELEMENTS*/
-@import "aamc-ui-bootstrap-files/elements/accordions.less";
-@import "aamc-ui-bootstrap-files/elements/alerts.less";
-@import "aamc-ui-bootstrap-files/elements/buttons.less";
-@import "aamc-ui-bootstrap-files/elements/calendar.less";
-@import "aamc-ui-bootstrap-files/elements/charts.less";
-@import "aamc-ui-bootstrap-files/elements/chat.less";
-@import "aamc-ui-bootstrap-files/elements/chat-widget.less";
-@import "aamc-ui-bootstrap-files/elements/circle.less";
-@import "aamc-ui-bootstrap-files/elements/ckeditor.less";
-@import "aamc-ui-bootstrap-files/elements/color-boxes.less";
-@import "aamc-ui-bootstrap-files/elements/date-picker.less";
-@import "aamc-ui-bootstrap-files/elements/gritter.less";
-@import "aamc-ui-bootstrap-files/elements/icons.less";
-@import "aamc-ui-bootstrap-files/elements/labels_badges.less";
-@import "aamc-ui-bootstrap-files/elements/lists.less";
-@import "aamc-ui-bootstrap-files/elements/modals.less";
-@import "aamc-ui-bootstrap-files/elements/multiselect.less";
-@import "aamc-ui-bootstrap-files/elements/nano-scroll.less";
-@import "aamc-ui-bootstrap-files/elements/nestable-lists.less";
-@import "aamc-ui-bootstrap-files/elements/pagination.less";
-@import "aamc-ui-bootstrap-files/elements/porlets.less";
-@import "aamc-ui-bootstrap-files/elements/progress.less";
-@import "aamc-ui-bootstrap-files/elements/select2.less";
-@import "aamc-ui-bootstrap-files/elements/slider.less";
-@import "aamc-ui-bootstrap-files/elements/switch.less";
-@import "aamc-ui-bootstrap-files/elements/tables.less";
-@import "aamc-ui-bootstrap-files/elements/tabs.less";
-@import "aamc-ui-bootstrap-files/elements/tiles.less";
-@import "aamc-ui-bootstrap-files/elements/timeline.less";
-@import "aamc-ui-bootstrap-files/elements/timerange.less";
-@import "aamc-ui-bootstrap-files/elements/todo-widget.less";
-@import "aamc-ui-bootstrap-files/elements/treeview.less";
-@import "aamc-ui-bootstrap-files/elements/validation.less";
-@import "aamc-ui-bootstrap-files/elements/widgets.less";
-@import "aamc-ui-bootstrap-files/elements/wizard.less";
+html,
+body {
+  height: 100%;
+}
 
-/*RESPONSIVE*/
-@import "aamc-ui-bootstrap-files/responsive.less";
+.footer li {
+  padding-left: 7px;
+  margin-left: 7px;
+  border-left: 1px solid #8ca1a1;
+}
+
+.footer li.noborder {
+    border: none;
+}
+
+.wrapper {
+  min-height: 98%;
+  height: auto;
+  margin: 0 auto -20px;
+  padding: 0 0 20px;
+}
+
+.nav-items{
+  height: 100%
+}
+
+.navbar-brand{
+  padding-left: 40px;
+}
+
