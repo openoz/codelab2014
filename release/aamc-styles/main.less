@@ -1,75 +1,70 @@
 /**
- * This is the main application stylesheet. It should include or import all
- * stylesheets used throughout the application as this is the only stylesheet in
- * the Grunt configuration that is automatically processed.
- */
+* This is the main application stylesheet. It should include or import all
+* stylesheets used throughout the application as this is the only stylesheet in
+* the Grunt configuration that is automatically processed.
+*/
 
 /**
- * Import of the aamc-styles. 
- */
- // Core variables and mixins
-
-
-@import 'variables.less';
-
-.navbar, .box-shadow{
-  -webkit-box-shadow: 1px 2px 4px #ccc;
-  -moz-box-shadow: 1px 2px 4px #ccc;
-  box-shadow: 1px 2px 4px #616161;
-}
-
-.navbar-nav > li > a {
-  padding-top: (@navbar-height/2) + 7;
-
-  @media (max-width: @grid-float-breakpoint) {
-    padding: 5px 5px 5px 5px;
+* Import of the aamc-styles.
+*/
+// Core variables and mixins  
+  @import "variables.less";
+  @import "themes/purple.less";    
+  .box-shadow { -webkit-box-shadow: 1px 2px 4px #ccc; -moz-box-shadow: 1px 2px 4px #ccc; box-shadow: 1px 2px 4px #616161; }  
+  .navbar{
+       
+    .box-shadow;
+    .navbar-nav { 
+      padding-left: 110px;
+      @media (max-width:  @grid-float-breakpoint) {
+        padding-left: 0px;     
+      }
+    }
+    .navbar-nav > li > a {
+      padding-top: (@navbar-height/2) + 7;
+      @media (max-width: @grid-float-breakpoint) {
+        padding: 5px 5px 5px 5px;
+      }
+    } 
+    .nav-items { height: 100%; }   
+    .navbar-brand { padding-left: 40px; }
+    .nav .open { 
+      -webkit-box-shadow: 0px 3px 3px darken(@navbar-primary, 40%); 
+      -moz-box-shadow: 0px 3px 3px darken(@navbar-primary, 40%); 
+      box-shadow: 0px 3px 3px darken(@navbar-primary, 40%); 
+    }
   }
-}
+  .info-background { 
+    background-color: @primary-color-lighter; 
+    color: @primary-color-darker; 
+  }
 
-.footer-shadow{
-  -webkit-box-shadow: 0px -4px 2px #ccc;
-  -moz-box-shadow:    0px -4px 2px #ccc;
-  box-shadow:         0px -4px 2px #ccc;  
-}
+  .footer {
+    border-left: 1px solid #8ca1a1;
+    border-top: solid silver 1px;
+    li {
+      padding-left:  7px;
+      margin-bottom: 10px;
+      margin-left: 7px;
+      padding-top: 5px;
+      vertical-align: middle;
+    }
+    ul li { 
+      padding-left: 5px; 
+      padding-right: 5px; }
+    li.noborder { 
+      border: none; 
+    }
+  }
 
-.footer{  
-  padding-top:5px;
-  margin-bottom: 15px;
-  vertical-align: middle;
-}
 
-.footer ul li {
-  padding-left: 5px;
-  padding-right: 5px;
-}
+  html,
+  body { height: 100%; }
 
-html,
-body {
-  height: 100%;
-}
 
-.footer li {
-  padding-left: 7px;
-  margin-left: 7px;
-  border-left: 1px solid #8ca1a1;
-}
-
-.footer li.noborder {
-    border: none;
-}
-
-.wrapper {
-  min-height: 98%;
-  height: auto;
-  margin: 0 auto -20px;
-  padding: 0 0 20px;
-}
-
-.nav-items{
-  height: 100%
-}
-
-.navbar-brand{
-  padding-left: 40px;
-}
-
+  .wrapper {
+    height: auto;
+    margin: 0 auto -20px;
+    min-height: 98%;
+    padding: 0 0 20px;
+  }

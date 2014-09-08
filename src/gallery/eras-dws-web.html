@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html ng-controller="AppController" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title class="ng-binding">Dashboard | eras-dws-web</title>
+
+    <base href="/eras-dws-web/">
+
+    <link rel="stylesheet" href="../aamc-styles.css">
+    <style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -90px !important;
+    width: 180px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+    <body>
+        <aamc-nav><div id="head-nav" class="topbar navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="navbar-left">
+                <a class="navbar-brand" href="https://www.aamc.org">
+                    <img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png">
+                </a>
+            </div>                        
+        </div>      
+        <div class="navbar-collapse collapse">
+                <div ng-transclude="">
+            <ul class="nav navbar-nav horizontal ng-scope">
+                <li><a ui-sref="index" href="#/">Dashboard</a>
+                </li>
+
+                <li><a ui-sref="manageApplicants" href="#/manageApplicants">Applicant Manager</a>
+                </li>
+
+                <li><a ui-sref="tokenManager" href="#/tokenManager">Token Manager</a>
+                </li>
+
+                <li><a ui-sref="reports" href="#/reports">Reports</a>
+                </li>
+
+                <li><a ui-sref="userManager" href="#/userManager">Manage Users</a>
+                </li>
+
+                <li><a ui-sref="administration" href="#/administration">Admin</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav not-nav ng-scope"></ul>
+            <aamc-account class="ng-scope"><style>
+  #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in{
+    margin-right: 10px;
+  }
+</style>
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+    <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Kiran Devarakonda</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+    <!-- ngIf: !isAuthenticated() -->    
+    <ul class="dropdown-menu" role="menu">
+          
+
+          <!-- ngIf: isAuthenticated() --><li ng-if="isAuthenticated()" class="ng-scope">
+
+            <a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>
+            <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="glyphicon glyphicon-user"></i> My Account</a>
+          </li><!-- end ngIf: isAuthenticated() --> 
+          <!-- ngIf: isAuthenticated() --><li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
+          <li>
+            <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
+            <!-- ngIf: !isAuthenticated() -->
+          </li>
+    </ul>   
+  </li>
+</ul></aamc-account>
+        </div>
+        </div><!--/.nav-collapse animate-collapse -->
+    </div>
+</div></aamc-nav>
+
+        <main class="container">
+
+            <!--<ol class="breadcrumb">            
+                <li ng-class="{active: !breadcrumbs}">
+                    <a href="#/dashboard">Dashboard</a>
+                </li>
+                <li ng-repeat="breadcrumb in breadcrumbs" ng-class="{active: breadcrumb.active}">
+                    <a href="{{breadcrumb.link}}">{{breadcrumb.title}}</a>
+                </li>
+            </ol>-->
+
+            <!-- uiView: undefined --><ui-view class="ng-scope">    <!--<div class="page-header">
+        <h1 class="">Dashboard</h1>
+    </div>-->
+    <div class="alert alert-danger alert-dismissible ng-scope" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span>
+        <span class="sr-only">Close</span></button> <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>Alert!</strong> You currently have MCAT scores on Hold. Please contact the AAMC Services Contact Center at <a href="mailto:mcat@aamc.org">mcat@aamc.org</a> or <a href="#">202-828-0690</a> for assistance.
+    </div>
+
+    <div class="row ng-scope">
+        <div class="col-xs-12 col-md-12">
+            <div class="panel panel-dashboard">
+                <div class="panel-heading">
+                    <span class="h1"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="h3"><span class="glyphicon glyphicon-home"></span> Applicant Summary</span>
+                                </div>
+                                <ul class="list-group text-center">
+                                    <li class="list-group-item"><strong class="">Total number of Students</strong><span class="list-padding"> - 130</span></li>
+                                    <li class="list-group-item"><strong>Registered</strong><span class="list-padding"> - 110</span></li>
+                                    <li class="list-group-item"><strong class="">Tokens</strong><span class="list-padding"> - 112</span></li>
+                                    <li class="list-group-item"><strong>Applicant Stat</strong><span class="list-padding"> - 90</span></li>
+                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">
+                                    <span class="h3"><span class="glyphicon glyphicon-tasks"></span> ERAS Notices</span>
+                                </div>
+                                <ul class="list-group text-center">
+                                    <li class="list-group-item"><strong>Subject</strong><span class="list-padding"> Deleted</span></li>
+                                    <li class="list-group-item"><strong>Received</strong><span class="list-padding"><a href="#"> View Details</a></span></li>
+                                    <li class="list-group-item"><strong>File</strong><span class="list-padding"><a href="#"> View Details</a></span></li>
+                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <span class="h3"><span class="glyphicon glyphicon-link"></span> Static Links</span>
+                                </div>
+                                <ul class="list-group text-left">
+                                    <li class="list-group-item"><a href="#">Reports</a></li>
+                                    <li class="list-group-item"><a href="#">Filters</a></li>
+                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <span class="h3"><span class="glyphicon glyphicon-file"></span> Documents</span>
+                                </div>
+                                <ul class="list-group text-center">
+                                    <li class="list-group-item"><strong>Number of LORs</strong><span class="list-padding"><a href="#"> View Scores</a></span></li>
+                                    <li class="list-group-item"><strong>Number of Missing LORs</strong><span class="list-padding"><a href="#"> View Scores</a></span></li>
+                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ui-view>
+        </main>
+
+        <div class="footer ">
+            <div class="container-fluid">
+                <p class="text-muted text-center hidden-sm hidden-xs">Copyright ©1995-2014 | Association of American Medical Colleges | Terms and Conditions | All rights reserved.</p>
+            </div>
+        </div>
+    
+    <script src="scripts/c5cd581f.vendor.js"></script>
+
+    <script src="scripts/762fe58d.scripts.js"></script>
+
+</body></html>

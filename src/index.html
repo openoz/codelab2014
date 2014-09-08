@@ -1,71 +1,152 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="<%= paths.main_style %>.css">
-</head>
-<body>
-
-<nav class="navbar navbar-aamc" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://www.aamc.org/" target="_blank">
-        <span class="sr-only">AAMC Logo</span>
-        <!--TODO: FIX How Image Is Inserted-->
-        <img style="max-width:40px;" src="https://static.aamc.org/content/images/aamcLogoSmWht.png">
-      </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+  <head>
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="aamc-styles.css">    
+  </head>
+  <body>
+    <div id="head-nav" class="topbar navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+          <div class="navbar-left">
+            <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">AAMC Styles</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a ui-sref="person.search">Responsive Design</a></li>
+                <li><a href="#">Accessiblility</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Samples <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="gallery/web-app.html">Web App Example</a></li>                
+              </ul>
+            </li>
+            <li><a href="#">Layouts</a></li>
+            
           </ul>
+          </div><!--/.nav-collapse animate-collapse -->
+        </div>
+      </div>
+      
+      <div class="container">
+        <h1>Styles</h1>
+        <div class="panel panel-default box-shadow" style="padding:0px;">
+          
+          <div class="row">
+            <div class="col-lg-8">
+              <img class="img-responsive" src="http://material-design.storage.googleapis.com/images/layout-principles-responsive-responsive-01_large_mdpi.png"/>
+            </div>            
+            <div class="col-lg-4 visible-lg" >
+              <div>
+                <p style="padding:20px;">
+                <h1 class="text-primary-darker">h1 - AAMC</h1>
+                <h1 class="text-accent-darker">h1 - Styles</h1>
+                <h2 class="text-muted">h2 - Styles</h2>
+                <h3 class="text-accent">h3 - Styles</h3>
+                <h4>h4 - Styles</h4>
+                <h5 class="text-primary">h5 - Styles</h5>
+                <h6>h6 - Styles</h6>
+                </p>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="panel panel-default" >
+              <div class="panel-body">
+                <div style="min-height:175px;">
+                  <h3>Guidelines</h3>
+                  <small>
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                  </p>
+                  </small>
+                  <ul class="list-unstyled">
+                    <li><a href="guidelines/responsive.html">Responsive Design</a></li>
+                    <li><a>Accessibility</a></li>
+                  </ul>
+                  
+                </div>
+                <hr/>
+                <a class="pull-right" >More ></a>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-default" >
+              <div class="panel-body">
+                <div style="min-height:175px;">
+                  <h3>Samples</h3>
+                  <small>
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  </p>
+                  </small>
+                  
+                  <ul class="list-unstyled">
+                    <li ><a href="gallery/web-app.html">Web App Example</a></li>                    
+                  </ul>
+                </div>
+                <hr/>
+                <a class="pull-right">More ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-default" >
+              <div class="panel-body">
+                <div style="min-height:175px;">
+                  <h3>Layouts</h3>
+                  <small>
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  </p>
+                  </small>
+                  <ul class="list-unstyled">
+                    <li><a>Feature Landing Page</a></li>
+                    <li><a>Two Column Layout</a></li>
+                    <li><a>Side Menu Layout</a></li>
+                  </ul>
+                </div>
+                <hr/>
+                <a class="pull-right">More ></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <footer class="footer footer-shadow hidden-xs xyzz">
+        <ul class="list-inline text-center hidden-sm hidden-xs">
+          <li class="noborder">655 K Street, NW, Suite 100, Washington, DC, 20001-2399</li><li>
+          <a alt="Contact Us" href="https://www.aamc.org/about/contact/" title="Contact Us">Contact Us</a>
+        </li>
+        <li>
+          <a alt="Follow Us" href="https://www.aamc.org/about/follow/" title="Follow Us">Follow Us</a>
+        </li>
+        <li>© 1995 - 2014 AAMC</li>
+        <li>
+          <a alt="Terms and Conditions" href="https://www.aamc.org/44864/terms.html" title="Terms and Conditions">Terms and Conditions</a>
+        </li>
+        <li>
+          <a alt="Privacy Statement" href="https://www.aamc.org/44866/privacy.html" title="Privacy Statement">Privacy Statement</a>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-<script src="<%= paths.scripts.jQuery %>"></script>
-<script src="<%= paths.scripts.bootstrap_js %>"></script>
-</body>
+    </footer>
+    
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
 </html>

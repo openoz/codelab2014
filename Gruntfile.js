@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: 8888,
-          base: ['<%= paths.bower_components %>', '<%= paths.build %>'],
+          base: ['src/', 'vendor/'],
           open: true,
           livereload: true
         }
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
           optimization: 2,
           sourceMap: true,
           modifyVars: {
-            bower_components_path: '"../bower_components"',
-            "icon-font-path": '"/fonts/"',
+            bower_components_path: '"vendor"',
+            "icon-font-path": '"vendor/bootstrap/fonts"',
             "fa-font-path": '"/fonts"'
           }
         },
@@ -51,21 +51,20 @@ module.exports = function(grunt) {
           ext: '.css'
           //rename: function(src, dest) {return dest;}
         }]
-      }/*,
-      release: {
-        options: {
-          compress: true,
-          yuicompress: true,
-          sourceMap: false,
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= paths.src %>/less',
-          src: '<%= paths.main_style %>.less',
-          dest: '<%= paths.release %>/css/',
-          ext: '.css'
-        }]
-      }*/
+      },
+      compile: {
+                options: {
+                    optimization: 2,
+                    modifyVars: {
+                      "bower_components_path": '"vendor"',
+                      "icon-font-path": '"vendor/bootstrap/fonts/"',
+                      "fa-font-path": '"vendor/font-awesome/fonts"'
+                    }
+                },
+                files: {
+                    'src/aamc-styles.css': 'src/aamc-styles.less'
+                },
+            }
     },
     copy: {
       html: {
@@ -107,7 +106,7 @@ module.exports = function(grunt) {
       },
       less: {
         files: '<%= paths.src%>/**/*.less',
-        tasks: ['less:development'],
+        tasks: ['less:compile'],
         options: {
           livereload: true
         }
