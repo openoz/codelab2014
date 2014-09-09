@@ -70,6 +70,7 @@ module.exports = function(grunt) {
       html: {
         options: {
           process: function(content, srcpath) {
+            console.log(srcpath);
             return content.replace('<base href="/">', '<base href="/aamc-styles/">');
           }
         },
