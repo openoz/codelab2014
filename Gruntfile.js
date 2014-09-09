@@ -70,7 +70,7 @@ module.exports = function(grunt) {
       html: {
         options: {
           process: function(content, srcpath) {
-            return grunt.template.process(content);
+            return content.replace('<base href="/">', '<base href="/aamc-styles">');
           }
         },
         expand: true,
@@ -78,6 +78,12 @@ module.exports = function(grunt) {
         src: ['**/*.html'],
         dest: '<%= paths.build %>/',
         filter: 'isFile'
+      },
+      vendor: {        
+          cwd: '<%= paths.src %>/vendor/',
+          src: '**/*',
+          dest: '<%= paths.build %>/vendor',
+          expand: true        
       },
       css:{
         expand: true,
@@ -130,7 +136,7 @@ module.exports = function(grunt) {
   //
   grunt.initConfig(config);
   grunt.registerTask('default', ['connect:dev', 'watch']);
-  grunt.registerTask('build', ['copy:html', 'less:compile', 'copy:css', 'copy:fonts_build'])
+  grunt.registerTask('build', ['copy:html', 'less:compile', 'copy:css', 'copy:fonts_build', 'copy:vendor'])
   grunt.registerTask('dev-watch', ['copy:fonts_dev', 'connect:dev', 'watch']);
   grunt.registerTask('release', ['copy:less_release']);
 };
