@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         options: {
           process: function(content, srcpath) {
             console.log(srcpath);
-            return content.replace('<base href="/">', '<base href="/aamc-styles/">');
+            return content.replace(/href="\//g, 'href="/aamc-styles/');
           }
         },
         expand: true,
