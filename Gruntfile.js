@@ -69,9 +69,8 @@ module.exports = function(grunt) {
     copy: {
       html: {
         options: {
-          process: function(content, srcpath) {
-            console.log(srcpath);
-            return content.replace(/href="\//g, 'href="/aamc-styles/');
+          process: function(content, srcpath) {            
+            return content.replace(/href="\//g, 'href="/aamc-styles/').replace("http://localhost:8888/", "https://apps.development.aamc.org/aamc-styles");
           }
         },
         expand: true,
