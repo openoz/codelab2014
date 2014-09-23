@@ -137,6 +137,6 @@ module.exports = function(grunt) {
   grunt.initConfig(config);
   grunt.registerTask('default', ['connect:dev', 'watch']);
   grunt.registerTask('build', ['copy:html', 'less:compile', 'copy:css', 'copy:fonts_build', 'copy:vendor', 'copy:less_release']);
-  grunt.registerTask('serve', ['copy:fonts_dev', 'connect:dev', 'watch']);
+  grunt.registerTask('serve', ['build', 'connect:dev', 'watch']);
   grunt.registerTask('release', ['copy:less_release']);
 };
