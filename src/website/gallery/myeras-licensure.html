@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+
+    <base href="http://localhost:8888/">
+    <link rel="stylesheet" type="text/css" href=".tmp/aamc-styles.css">
+    <style>
+        .pull-bottom {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
+        .side-menu{
+            padding-top:40px;
+        }
+        .side-menu li:nth-child(n+2){
+            padding-left: 40px;
+            padding-bottom:25px;
+        }
+        .side-menu li a i {
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+<div id="head-nav" class="topbar navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-left">
+                <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Main</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Usability</a></li>
+                        <li><a href="website/guidelines/responsive.html">Responsive Design</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layouts<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Grid</a></li>
+                        <li><a href="#">Tiles</a></li>
+                        <li class="dropdown-submenu"><a href="#">Templates</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Content</a></li>
+                                <li><a href="#">Application</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Modals & Alerts</a></li>
+                        <li><a href="#">Tabs & Accordions</a></li>
+                        <li><a href="#">Lists & Trees</a></li>
+                        <li class="dropdown-submenu"><a href="#">Typography</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Fonts</a></li>
+                                <li><a href="#">Icons</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components<b class="caret"></b></a>
+                    <ul class="dropdown-menu col-menu-2">
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-bar-chart-o"></i>Tables</li>
+                                <li><a href="#">Basic Tables</a></li>
+                                <li><a href="#">Data Tables</a></li>
+                                <li><a href="#">CSS3 Data Grids</a></li>
+                                <li class="dropdown-header"><i class="fa fa-legal"></i>Forms</li>
+                                <li><a href="#">Basic Forms</a></li>
+                                <li><a href="#">Multi-select</a></li>
+                                <li><a href="#">Input Groups</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-gear"></i>Extras</li>
+                                <li><a href="#">DateRange Picker</a></li>
+                                <li><a href="#">Calendar</a></li>
+                                <li><a href="#">Spinners</a></li>
+                                <li><a href="#">Charts</a></li>
+                                <li><a href="#">Maps</a></li>
+                                <li><a href="#">Advanced Controls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="website/gallery/web-app.html">Web App Example</a></li>
+                        <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
+                        <li><a href="website/gallery/fap.html">FAP Example</a></li>
+                        <li><a href="website/gallery/eras-dws-web.html">MyERAS Example</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav not-nav ng-scope"></ul>
+            <aamc-account class="ng-scope">
+                <!--<style>
+                    #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
+                        margin-right: 10px;
+                    }
+                </style>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Kiran Devarakonda</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+                        <!-- ngIf: !isAuthenticated() -->
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- ngIf: isAuthenticated() -->
+                            <li ng-if="isAuthenticated()" class="ng-scope">
+                                <!--<a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>-->
+                                <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="glyphicon glyphicon-user"></i> My Account</a>
+                            </li><!-- end ngIf: isAuthenticated() -->
+                            <li><a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="#" class=""><i class="glyphicon glyphicon-user"></i>  Help</a></li>
+                            <!-- ngIf: isAuthenticated() -->
+                            <li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
+                            <li>
+                                <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
+                                <!-- ngIf: !isAuthenticated() -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul></aamc-account>
+        </div><!--/.nav-collapse animate-collapse -->
+    </div>
+</div>
+
+<div class="container-fluid">
+<div class="page-head">
+    <h1>Electronic Residency Application Service<small> &nbsp;2015 Calendar Year Application </small></h1>
+    <ol class="breadcrumb">
+        <li>Main</li>
+        <li class="active">My Application</li>
+    </ol>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="wizard">
+    <ul class="steps" style="margin-left: 0">
+        <li data-step="1"><span class="badge badge-info">1</span>Personal<span class="chevron"></span></li>
+        <li data-step="2"><span class="badge">2</span>Biographic<span class="chevron"></span></li>
+        <li data-step="3"><span class="badge">3</span>Education<span class="chevron"></span></li>
+        <li data-step="4"><span class="badge">4</span>Experience<span class="chevron"></span></li>
+        <li data-step="5" class="active"><span class="badge">5</span>Licensure<span class="chevron"></span></li>
+        <li data-step="6"><span class="badge">6</span>Publications<span class="chevron"></span></li>
+        <li data-step="7"><span class="badge">7</span>Documents<span class="chevron"></span></li>
+        <li data-step="8"><span class="badge">8</span>Certify & Submit</li>
+    </ul>
+<div class="step-content">
+<div class="panel-body">
+<form name="applicantForm" class="form-horizontal ng-pristine ng-valid ng-valid-required" role="form" ng-submit="processApplicantInformationForm(applicantForm.$valid)">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Citizenship Status</strong>
+    </div>
+    <div class="panel-body">
+        <div class="aamc-question-label ng-isolate-scope" question="questions.q_citizenship">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <label for="q_citizenship" class="">
+                          <span ng-show="!alttext" class="">
+                          <!-- ngIf: evaluate -->
+                          <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Are you currently a U.S. citizen or U.S. national; a lawful permanent resident (LPR) of the United States ("Green Card" holder); or granted Deferred Action for Childhood Arrivals (DACA), refugee or asylum status by the U.S. government?</span><!-- end ngIf: !evaluate -->
+                          </span>
+                          <span ng-show="alttext" class="ng-hide">
+                          <!-- ngIf: evaluate -->
+                          <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                          </span>
+                <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+                <!--     <span ng-show="!daterange">{{date}}</span> -->
+                <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+            </label>
+        </div>
+
+        <fieldset class="form-group">
+                        <span class="col-sm-6"> <input type="radio" name="q_citizenship" id="q_citizenship_yes" value="1" ng-model="userData.APPLICANT.usCitizenship" required="" class="ng-pristine ng-valid ng-valid-required"> <label for="q_citizenship_yes">Yes</label>
+                        </span> <span class="col-sm-6"> <input type="radio" name="q_citizenship" id="q_citizenship_no" value="0" ng-model="userData.APPLICANT.usCitizenship" class="ng-pristine ng-valid">  <label for="q_citizenship_no">No</label>
+                        </span>
+            <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_citizenship.$invalid" formsubmitted="submitted" message="questions.q_citizenship.invalidDataErrorMessage">
+                <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+            </div>
+        </fieldset>
+    </div>
+</div>
+<div class="aamc-personal-info-tmpl" aamc-personal-info-tmpl="" ng-show="userData.APPLICANT.usCitizenship=='1'" obj="obj">
+<!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+<div class="panel panel-default">
+<div class="panel-heading ">
+    <strong>Personal Information</strong>
+</div>
+<div class="panel-body">
+<label>Provide your Full Legal Name</label>
+
+<div class="form-group">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_salutation" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_salutation" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Salutation</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9 mainselection">
+        <select id="q_salutation" name="q_salutation" class="form-control ng-pristine ng-valid ng-valid-required" ng-model="userData.APPLICANT.salutationCode" required="" ng-options="salutation.id as salutation.value for salutation in referenceData.SALUTATIONREFDATA"><option value="" ng-selected="selected" class="ng-binding">Select Salutation</option><option value="0">Mr.</option><option value="1">Mrs.</option><option value="2">Ms.</option><option value="3">Miss</option><option value="4">Dr.</option><option value="5">Sr.</option><option value="6">Sister</option><option value="7">Rev.</option><option value="8">Prof.</option><option value="9">Dean</option><option value="10">Rabbi</option><option value="11">Col.</option><option value="12">Capt.</option><option value="13">Ens.</option><option value="14">Gen.</option><option value="15">Hon.</option><option value="16">Lt.</option><option value="17">Lt. Col.</option><option value="18">Maj.</option><option value="19">Right Hon.</option><option value="20">Sen.</option></select>
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_salutation.$error.required" formsubmitted="submitted" message="questions.q_salutation.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_firstName.$invalid &amp;&amp; !applicantForm.q_firstName.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_firstName" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_firstName" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">First Name</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <input type="text" class="form-control ng-pristine ng-valid-maxlength ng-valid-minlength ng-valid ng-valid-required" id="q_firstName" name="q_firstName" ng-model="userData.APPLICANT.firstName" placeholder="Enter First Name" ng-minlength="1" ng-maxlength="55" required="">
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_firstName.$error.maxlength" formsubmitted="submitted" message="questions.q_firstName.errorMessageMaxLength">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_firstName.$error.required" formsubmitted="submitted" message="questions.q_firstName.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_middleName.$invalid &amp;&amp; !applicantForm.q_middleName.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_middleName" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_middleName" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Middle Name</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger ng-hide"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <input type="text" class="form-control ng-pristine ng-valid ng-valid-maxlength ng-valid-minlength" id="q_middleName" name="q_middleName" ng-minlength="1" ng-maxlength="55" ng-model="userData.APPLICANT.middleName" placeholder="Enter Middle Name">
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_middleName.$error.maxlength" formsubmitted="submitted" message="questions.q_middleName.errorMessageMaxLength">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_lastName.$invalid &amp;&amp; !applicantForm.q_lastName.$pristine }">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_lastName" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_lastName" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Last Name</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <input type="text" class="form-control ng-pristine ng-valid-maxlength ng-valid-minlength ng-valid ng-valid-required" id="q_lastName" name="q_lastName" ng-model="userData.APPLICANT.lastname" required="" placeholder="Enter Last Name" ng-minlength="1" ng-maxlength="55">
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_lastName.$error.maxlength" formsubmitted="submitted" message="questions.q_lastName.errorMessageMaxLength">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_lastName.$error.required" formsubmitted="submitted" message="questions.q_lastName.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_suffix" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_suffix" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Suffix</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger ng-hide"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <select id="q_suffix" class="form-control ng-pristine ng-valid" ng-model="userData.APPLICANT.suffixCode" ng-options="suffix.id as suffix.value for suffix in referenceData.SUFFIXREFDATA"><option value="" ng-selected="selected" class="ng-binding">Select Suffix</option><option value="0">Jr.</option><option value="1">Sr.</option><option value="2">I</option><option value="3">II</option><option value="4">III</option><option value="5">IV</option><option value="6">V</option><option value="7">VI</option><option value="8">VII</option><option value="9">VIII</option></select>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_birthDate.$invalid &amp;&amp; ! applicantForm.q_birthDate.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_birthDate" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_birthDate" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Birth Date</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <input type="text" class="form-control ng-pristine ng-valid ng-valid-required" id="q_birthDate" name="q_birthDate" ng-model="dateOfBirth" placeholder="mm-dd-yyyy" ng-required="true" required="required" ng-readonly="" disabled="">
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_birthDate.$invalid" formsubmitted="submitted" message="questions.q_birthDate.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_legalResidence.$invalid &amp;&amp; ! applicantForm.q_legalResidence.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_legalResidence" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_legalResidence" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">State of Legal Residence</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <select name="q_legalResidence" id="q_legalResidence" class="form-control ng-pristine ng-valid ng-valid-required" ng-model="userData.APPLICATION.legalResStateCode" required="" ng-options="state.id as state.value for state in legalResidency"><option value="" ng-selected="selected" class="ng-binding">Select a State</option><option value="0">APO-FPO Americas</option><option value="1">APO-FPO Europe</option><option value="2">Alaska</option><option value="3">Alabama</option><option value="4">APO-FPO Pacific</option><option value="5">Arkansas</option><option value="6">American Samoa</option><option value="7">Arizona</option><option value="8">California</option><option value="9">Colorado</option><option value="10">Connecticut</option><option value="11">District of Columbia</option><option value="12">Delaware</option><option value="13">Florida</option><option value="14">Georgia</option><option value="15">Guam</option><option value="16">Hawaii</option><option value="17">Iowa</option><option value="18">Idaho</option><option value="19">Illinois</option><option value="20">Indiana</option><option value="21">Kansas</option><option value="22">Kentucky</option><option value="23">Louisiana</option><option value="24">Massachusetts</option><option value="25">Maryland</option><option value="26">Maine</option><option value="27">Marshall Islands</option><option value="28">Michigan</option><option value="29">Minnesota</option><option value="30">Missouri</option><option value="31">Northern Mariana Islands</option><option value="32">Mississippi</option><option value="33">Montana</option><option value="34">North Carolina</option><option value="35">North Dakota</option><option value="36">Nebraska</option><option value="37">New Hampshire</option><option value="38">New Jersey</option><option value="39">New Mexico</option><option value="40">Nevada</option><option value="41">New York</option><option value="42">Ohio</option><option value="43">Oklahoma</option><option value="44">Oregon</option><option value="45">Pennsylvania</option><option value="46">Puerto Rico</option><option value="47">Rhode Island</option><option value="48">South Carolina</option><option value="49">South Dakota</option><option value="50">Tennessee</option><option value="51">Texas</option><option value="52">Unknown USA</option><option value="53">Utah</option><option value="54">Virginia</option><option value="55">Virgin Islands</option><option value="56">Vermont</option><option value="57">Washington</option><option value="58">Wisconsin</option><option value="59">West Virginia</option><option value="60">Wyoming</option></select>
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_legalResidence.$error.required" formsubmitted="submitted" message="questions.q_legalResidence.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Contact Information</strong>
+    </div>
+    <div class="panel-body">
+        <div class="form-group" ng-class="{ 'has-error' : applicantForm.q_dayPhone.$invalid &amp;&amp; !applicantForm.q_dayPhone.$pristine }">
+            <div class="aamc-question-label ng-isolate-scope" question="questions.q_dayPhone" colclass="'col-sm-3 control-label'">
+                <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+                <label for="q_dayPhone" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Day Phone</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+                    <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+                    <!--     <span ng-show="!daterange">{{date}}</span> -->
+                    <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+                </label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control ng-pristine ng-valid-maxlength ng-valid-pattern ng-valid ng-valid-required" id="q_dayPhone" name="q_dayPhone" ng-model="userData.APPLICANT.dayTimePhone" required="" placeholder="Enter Phone Number" ng-pattern="/^([0-9()+ -]*)$/" ng-maxlength="20">
+
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_dayPhone.$invalid" formsubmitted="submitted" message="questions.q_dayPhone.invalidDataErrorMessage">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+                </div>
+            </div>
+            <div class="col-sm-3" ng-class="{ 'has-error' : applicantForm.q_dayPhoneExt.$invalid &amp;&amp; !applicantForm.q_dayPhoneExt.$pristine }">
+                <input type="text" class="form-control ng-pristine ng-valid ng-valid-maxlength ng-valid-pattern" id="q_dayPhoneExt" name="q_dayPhoneExt" ng-model="userData.APPLICANT.dayTimePhoneExtn" placeholder="Enter Extension" ng-maxlength="10" ng-pattern="/^[0-9]+$/">
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_dayPhoneExt.$error.maxlength" formsubmitted="submitted" message="questions.q_dayPhoneExt.errorMessageMaxLength">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+                </div>
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_dayPhoneExt.$invalid &amp;&amp; !applicantForm.q_dayPhoneExt.$error.maxlength" formsubmitted="submitted" message="questions.q_dayPhoneExt.invalidDataErrorMessage">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : applicantForm.q_email.$invalid &amp;&amp; !applicantForm.q_email.$pristine }">
+            <div class="aamc-question-label ng-isolate-scope" question="questions.q_email" colclass="'col-sm-3 control-label'">
+                <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+                <label for="q_email" class="col-sm-3 control-label">
+                              <span ng-show="!alttext" class="">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Email</span><!-- end ngIf: !evaluate -->
+                              </span>
+                              <span ng-show="alttext" class="ng-hide">
+                              <!-- ngIf: evaluate -->
+                              <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                              </span>
+                    <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+                    <!--     <span ng-show="!daterange">{{date}}</span> -->
+                    <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+                </label>
+            </div>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="email" class="form-control ng-pristine ng-valid-email ng-valid-maxlength ng-valid-pattern ng-valid ng-valid-required" id="q_email" name="q_email" ng-model="userData.APPLICANT.email" required="" placeholder="Enter Email " ng-pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,50}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,50}[a-zA-Z0-9])?)*$/" ng-maxlength="100" ng-change="resetEmailValidation()">
+                </div>
+
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_email.$invalid &amp;&amp; !applicantForm.q_email.$error.maxlength &amp;&amp;
+                              !applicantForm.q_email.$error.userPartInvalid &amp;&amp; !applicantForm.q_email.$error.domainPartInvalid" formsubmitted="submitted" message="questions.q_email.invalidDataErrorMessage">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+
+                </div>
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_email.$error.maxlength" formsubmitted="submitted" message="questions.q_email.errorMessageMaxLength">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+                    <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                        <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <div ng-transclude=""><span class="ng-binding ng-scope">Email exceeds the maxlength allowed for this field</span></div>
+                    </div>
+                </div>
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_email.$error.userPartInvalid &amp;&amp; !applicantForm.q_email.$error.maxlength" formsubmitted="submitted" message="'The username provided in the email exceeds the limit of 50 characters'">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+                    <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                        <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <div ng-transclude=""><span class="ng-binding ng-scope">The username provided in the email exceeds the limit of 50 characters</span></div>
+                    </div>
+                </div>
+                <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_email.$error.domainPartInvalid &amp;&amp; !applicantForm.q_email.$error.maxlength" formsubmitted="submitted" message="'The domain provided in the email exceeds the limit of 50 characters'">
+                    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+                    <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                        <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <div ng-transclude=""><span class="ng-binding ng-scope">The domain provided in the email exceeds the limit of 50 characters</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <strong>Mailing Address</strong>
+</div>
+<div class="panel-body">
+<div class="aamc-question-label ng-isolate-scope" question="questions.q_countryOfResidence">
+    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+    <label for="q_countryOfResidence" class="">
+                            <span ng-show="!alttext" class="">
+                            <!-- ngIf: evaluate -->
+                            <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Country of Residence</span><!-- end ngIf: !evaluate -->
+                            </span>
+                            <span ng-show="alttext" class="ng-hide">
+                            <!-- ngIf: evaluate -->
+                            <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                            </span>
+        <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+        <!--     <span ng-show="!daterange">{{date}}</span> -->
+        <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+    </label>
+</div>
+
+<fieldset class="form-group">
+                          <span class="col-sm-4">
+                          <input type="radio" name="q_countryOfResidence" id="q_countryOfResidenceUS" value="USA" ng-model="country" required="" ng-change="resetAddress()" class="ng-pristine ng-valid ng-valid-required"> <label for="q_countryOfResidenceUS">United States</label>
+                          </span>
+
+                          <span class="col-sm-4">
+                          <input type="radio" name="q_countryOfResidence" id="q_countryOfResidenceCanada" value="CAN" ng-model="country" ng-change="resetAddress()" class="ng-pristine ng-valid"> <label for="q_countryOfResidenceCanada">Canada</label>
+                          </span>
+
+                          <span class="col-sm-4">
+                          <input type="radio" name="q_countryOfResidence" id="q_countryOfResidenceOther" value="other" ng-model="country" ng-change="resetAddress()" class="ng-pristine ng-valid"> <label for="q_countryOfResidenceOther">Other</label>
+                          </span>
+</fieldset>
+
+<div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_countryOfResidence.$error.required" formsubmitted="submitted" message="questions.q_countryOfResidence.invalidDataErrorMessage">
+    <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+    <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+        <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <div ng-transclude=""><span class="ng-binding ng-scope">Country of Residence is required</span></div>
+    </div>
+</div>
+
+<div class="aamc-address-input-tmpl" aamc-address-input-tmpl="" ng-show="country">
+<!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+<div class="form-group ng-hide" ng-show="country=='other'" ng-class="{ 'has-error' : applicantForm.q_otherCountry.$invalid &amp;&amp; !applicantForm.q_otherCountry.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_otherCountry" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_otherCountry" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Other Country</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+    <div class="col-sm-9">
+        <!-- ngIf: country=='other' -->
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_otherCountry.$error.required" formsubmitted="submitted" message="questions.q_otherCountry.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Other Country is required</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_addressLine1.$invalid &amp;&amp; !applicantForm.q_addressLine1.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_addressLine1" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_addressLine1" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Address</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+    <div class="col-sm-9">
+        <input type="text" class="form-control input-sm ng-pristine ng-valid-maxlength ng-valid ng-valid-required" id="q_addressLine1" name="q_addressLine1" ng-model="userData.APPLICANT.addressLine1" placeholder="Enter Address Line 1" ng-maxlength="45" required="">
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_addressLine1.$error.required" formsubmitted="submitted" message="questions.q_addressLine1.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Your Address Line 1 is required</span></div>
+            </div>
+        </div>
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_addressLine1.$error.maxlength" formsubmitted="submitted" message="questions.q_addressLine1.errorMessageMaxLength">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Address excceds maximum length allowed for this field</span></div>
+            </div>
+        </div>
+        <input type="text" class="form-control input-sm ng-pristine ng-valid ng-valid-maxlength" id="q_addressLine2" name="q_addressLine2" ng-model="userData.APPLICANT.addressLine2" placeholder="Enter Address Line 2" ng-maxlength="45">
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_addressLine2.$error.maxlength" formsubmitted="submitted" message="questions.q_addressLine2.errorMessageMaxLength">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Address excceds maximum length allowed for this field</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group" ng-class="{ 'has-error' : applicantForm.q_city.$invalid &amp;&amp; !applicantForm.q_city.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_city" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_city" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">City</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+    <div class="col-sm-9">
+        <input type="text" class="form-control input-sm ng-pristine ng-valid-maxlength ng-valid ng-valid-required" id="q_city" name="q_city" ng-model="userData.APPLICANT.city" placeholder="Enter City" ng-maxlength="40" required="">
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_city.$error.required" formsubmitted="submitted" message="questions.q_city.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">City is required</span></div>
+            </div>
+        </div>
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_city.$error.maxlength" formsubmitted="submitted" message="questions.q_city.errorMessageMaxLength">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Your City exceeds the maximum length of this field</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="form-group" ng-show="country=='USA'" ng-class="{ 'has-error' : applicantForm.q_state.$invalid &amp;&amp; !applicantForm.q_state.$pristine }">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_state" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_state" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">State</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+    <div class="col-sm-9">
+        <!-- ngIf: country=='USA' --><select id="q_state" name="q_state" class="form-control ng-scope ng-pristine ng-valid ng-valid-required" ng-model="userData.APPLICANT.stateCode" ng-options="state.id as state.value for state in getUSStates()" ng-if="country=='USA'" required=""><option value="0">Select State</option><option value="1">APO-FPO Americas</option><option value="2">APO-FPO Europe</option><option value="3">Alaska</option><option value="4">Alabama</option><option value="5">APO-FPO Pacific</option><option value="6">Arkansas</option><option value="7">American Samoa</option><option value="8">Arizona</option><option value="9">California</option><option value="10">Colorado</option><option value="11">Connecticut</option><option value="12">District of Columbia</option><option value="13">Delaware</option><option value="14">Florida</option><option value="15">Georgia</option><option value="16">Guam</option><option value="17">Hawaii</option><option value="18">Iowa</option><option value="19">Idaho</option><option value="20">Illinois</option><option value="21">Indiana</option><option value="22">Kansas</option><option value="23" selected="selected">Kentucky</option><option value="24">Louisiana</option><option value="25">Massachusetts</option><option value="26">Maryland</option><option value="27">Maine</option><option value="28">Marshall Islands</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="31">Missouri</option><option value="32">Northern Mariana Islands</option><option value="33">Mississippi</option><option value="34">Montana</option><option value="35">North Carolina</option><option value="36">North Dakota</option><option value="37">Nebraska</option><option value="38">New Hampshire</option><option value="39">New Jersey</option><option value="40">New Mexico</option><option value="41">Nevada</option><option value="42">New York</option><option value="43">Ohio</option><option value="44">Oklahoma</option><option value="45">Oregon</option><option value="46">Pennsylvania</option><option value="47">Puerto Rico</option><option value="48">Rhode Island</option><option value="49">South Carolina</option><option value="50">South Dakota</option><option value="51">Tennessee</option><option value="52">Texas</option><option value="53">Unknown USA</option><option value="54">Utah</option><option value="55">Virginia</option><option value="56">Virgin Islands</option><option value="57">Vermont</option><option value="58">Washington</option><option value="59">Wisconsin</option><option value="60">West Virginia</option><option value="61">Wyoming</option></select><!-- end ngIf: country=='USA' -->
+
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_state.$error.required" formsubmitted="submitted" message="questions.q_state.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">State is required</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group ng-hide" ng-show="country=='CAN'" ng-class="{ 'has-error' : applicantForm.q_province.$invalid &amp;&amp; !applicantForm.q_province.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_province" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_province" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Province</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+    <div class="col-sm-9">
+        <!-- ngIf: country=='CAN' -->
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_province.$error.required" formsubmitted="submitted" message="questions.q_province.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Province is required</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group" ng-show="country=='USA'" ng-class="{ 'has-error' : applicantForm.q_zipCode.$invalid &amp;&amp; !applicantForm.q_zipCode.$pristine }">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_zipCode" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_zipCode" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Zip Code</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9">
+        <!-- ngIf: country=='USA' --><input type="text" class="form-control input-sm ng-scope ng-pristine ng-valid ng-valid-maxlength ng-valid-pattern ng-valid-required" id="q_zipCode" name="q_zipCode" ng-model="userData.APPLICANT.zipCode" placeholder="Enter Zip Code" ng-maxlength="10" ng-pattern="/^[0-9]{5}(-[0-9]{4})?$/" ng-if="country=='USA'" required=""><!-- end ngIf: country=='USA' -->
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_zipCode.$invalid" formsubmitted="submitted" message="questions.q_zipCode.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Enter a valid zip code</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group ng-hide" ng-show="country!='USA'" ng-class="{ 'has-error' : applicantForm.q_postalCode.$invalid &amp;&amp; !applicantForm.q_postalCode.$pristine}">
+    <div class="aamc-question-label ng-isolate-scope" question="questions.q_postalCode" colclass="'col-sm-3 control-label'">
+        <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+        <label for="q_postalCode" class="col-sm-3 control-label">
+                                <span ng-show="!alttext" class="">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.displayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope">Postal Code</span><!-- end ngIf: !evaluate -->
+                                </span>
+                                <span ng-show="alttext" class="ng-hide">
+                                <!-- ngIf: evaluate -->
+                                <!-- ngIf: !evaluate --><span ng-if="!evaluate" ng-bind="question.altDisplayText.replace('{date}', date).replace('{dateRange}', date-1 + ' - ' + date)" class="ng-binding ng-scope"></span><!-- end ngIf: !evaluate -->
+                                </span>
+            <!--    <span ng-show="daterange">{{date-1}} - {{date}}</span> -->
+            <!--     <span ng-show="!daterange">{{date}}</span> -->
+            <span ng-show="question.answerRequired==1" class="text-danger"><strong> *</strong></span>
+        </label>
+    </div>
+
+    <div class="col-sm-9 ng-hide" ng-show="country=='CAN'">
+        <!-- ngIf: country=='CAN' -->
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_postalCode.$invalid" formsubmitted="submitted" message="questions.q_postalCode.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Enter a valid postal code</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-9" ng-show="country!='CAN'">
+        <!-- ngIf: country!='USA' && country!='CAN' -->
+        <div class="aamc-validation-alerts ng-isolate-scope ng-hide" ng-show="formsubmitted" condition="applicantForm.q_postalCode.$invalid" formsubmitted="submitted" message="questions.q_postalCode.invalidDataErrorMessage">
+            <!-- Place all tags inside this parent tag. DIRECTIVE TEMPLATES CAN HAVE ONLY ONE ROOT ELEMENT! -->
+            <div class="alert alert-danger alert ng-isolate-scope alert-warning ng-hide" ng-class="{'alert-warning': true, 'alert-dismissable': closeable}" role="alert" ng-show="condition==true &amp;&amp; message!=null">
+                <button ng-show="closeable" type="button" class="close ng-hide" ng-click="close()">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div ng-transclude=""><span class="ng-binding ng-scope">Enter a valid postal code</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-danger ng-hide" ng-show="userData.APPLICANT.usCitizenship=='0'">
+    <div class="panel-heading ">
+        <strong>Note:</strong>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-12">
+            <p>You must (1) be a U.S. citizen or U.S. national; (2) be a lawful permanent resident (LPR) of the United States
+                ("Green Card" holder); or (3) have been granted Deferred Action for Childhood Arrivals (DACA),
+                refugee or asylum status by the U.S. government to be eligible for the AAMC's Fee Assistance Program.</p>
+            <p>
+                Providing false information about your citizenship status may lead to an <a href="https://www.aamc.org/students/applying/amcas/amcasresources/153910/policies_and_procedures_for_investigations.html">Investigation</a>,
+                which might impact eligibility for Fee Assistance now and in the future.
+            </p>
+        </div>
+    </div>
+</div>
+<button ng-show="userData.APPLICANT.usCitizenship=='1'" type="submit" class="btn btn-primary" ng-click="submitted=true">
+    <span class="glyphicon glyphicon-chevron-right"></span> Save &amp;
+    Continue
+</button>
+<button ng-show="userData.APPLICANT.usCitizenship=='0'" type="button" class="btn btn-primary ng-hide" data-toggle="modal" data-target="#citizenshipConfirmationModal">
+    <span class="glyphicon glyphicon-chevron-right"></span> Ok
+</button>
+</form>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+<footer class="footer footer-shadow hidden-xs">
+    <ul class="list-inline text-center hidden-sm hidden-xs">
+        <li class="noborder">655 K Street, NW, Suite 100, Washington, DC, 20001-2399</li><li>
+        <a alt="Contact Us" href="https://www.aamc.org/about/contact/" title="Contact Us">Contact Us</a>
+    </li>
+        <li>
+            <a alt="Follow Us" href="https://www.aamc.org/about/follow/" title="Follow Us">Follow Us</a>
+        </li>
+        <li>© 1995 - 2014 AAMC</li>
+        <li>
+            <a alt="Terms and Conditions" href="https://www.aamc.org/44864/terms.html" title="Terms and Conditions">Terms and Conditions</a>
+        </li>
+        <li>
+            <a alt="Privacy Statement" href="https://www.aamc.org/44866/privacy.html" title="Privacy Statement">Privacy Statement</a>
+        </li>
+    </ul>
+</footer>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
