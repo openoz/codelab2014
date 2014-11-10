@@ -36,12 +36,12 @@ module.exports = function(grunt) {
           compress: false,
           yuicompress: false,
           optimization: 2,
-          sourceMap: true/*,
+          sourceMap: true,
           modifyVars: {
             bower_components_path: '"vendor"',
             "icon-font-path": '"/fonts"',
             "fa-font-path": '"/fonts"'
-          }*/
+          }
         },
         files: [{
           expand: true,

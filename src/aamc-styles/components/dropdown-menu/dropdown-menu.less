@@ -1,4 +1,4 @@
-/*Dropdown Nav Menu*/
+/*Dropdown Menu in Navbar*/
 .dropdown-menu {
   border: 0;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.176);
@@ -134,7 +134,6 @@
   box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2) inset;
   padding: 6px 10px;
 }
-/**TOP NAVBAR**/
 .navbar-default .navbar-toggle:hover {
   background: rgba(255, 255, 255, 0.07);
 }
@@ -151,65 +150,25 @@
   color: #FFFFFF;
   font-size: 18px;
 }
-.navbar-collapse {
-  border-top: none;
-  max-height: none;
-  position: relative;
+.not-nav .dropdown-menu:before {
+  left: 340px;
 }
-.navbar-nav {
-  margin: 10px -15px;
-}
-.navbar .navbar-nav {
-  padding-left: 30px !important;
-}
-/*.navbar-brand {
-  padding-left: 75px !important;
-}*/
 
+.navbar-nav > li.button .dropdown-menu {
+  margin-left: -325px;
+  max-width: 460px;
+  min-width: 180px;
+  width: 420px;
+  padding: 0 15px 19px 10px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
 #head-nav.topbar {
-    background-color: #62269e;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
-    color: #fff;
-    margin-bottom: 20px;
-    padding-left: 0;
+  color: #333;
 }
-#head-nav.topbar .sidebar-logo {
-    display: inline-block;
-    float: left;
-    width: 220px;
-}
-#head-nav.topbar .navbar-toggle {
-    background-color: #685298;
-    border: medium none;
-    box-shadow: none;
-    margin-right: 15px;
-}
-#head-nav.topbar .navbar-nav > li > a {
-    color: #fff;
-    top: 10px;
-}
-#head-nav.topbar .navbar-nav > li {
-    padding-top: 10px;
-}
-#head-nav.topbar .navbar-nav > .active > a, #head-nav.topbar .navbar-nav > .active > a:hover, #head-nav.topbar .navbar-nav > .active > a:focus {
-    background-color: #816bb1;
-}
-#head-nav.topbar .navbar-nav > .open > a, #head-nav.topbar .navbar-nav > .open > a:hover, #head-nav.topbar .navbar-nav > .open > a:focus {
-    background-color: #816bb1;
-}
-#head-nav.topbar .navbar-nav > .dropdown > a .caret {
-    border-bottom-color: #fff;
-    border-top-color: #fff;
-}
-#head-nav.topbar .navbar-nav .dropdown .dropdown-menu {
-    margin-top: 10px;
-}
-#head-nav.topbar .not-nav {
-    float: right;
-}
-#head-nav.topbar .navbar-nav > li.button > a {
-    box-shadow: none;
-}
-#head-nav.topbar .not-nav > .open > a, #head-nav.topbar .not-nav > .open > a:hover, #head-nav.topbar .not-nav > .open > a:focus {
-    color: #fff !important;
+.dropdown-menu {
+  font-size: 12px;
 }

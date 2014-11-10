@@ -1,7 +1,85 @@
+/**WIZARD**/
+.wizard-row {
+  position: relative;
+}
+.wizard-row .fuelux {
+  position: absolute;
+}
+.block-wizard {
+  padding: 0;
+}
+.block-wizard .step-content {
+  padding: 20px;
+  @media (min-width: 320px) and (max-width: 1024px)  {
+    padding: 0px;
+  }
+}
 .wizard {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 #fff;
+  border-color: -moz-use-text-color -moz-use-text-color #e2e2e2;
+  border-image: none;
+  border-radius: 0;
+  border-style: none none solid;
+  border-width: 0 0 1px;
+  box-shadow: none;
+}
+.wizard ul li.active {
+  background: none repeat scroll 0 0 #fff;
+  color: #816bb1;
+}
+.wizard ul li.complete {
+  background: none repeat scroll 0 0 #62269e;
+  color: #fff;
+}
+.wizard ul li.complete:hover {
+  background: none repeat scroll 0 0 #634d93;
+}
+.wizard ul li.complete:hover .chevron:before {
+  border-left-color: #634d93;
+}
+.wizard ul li.complete .chevron {
+  border-left-color: #5e488e;
+}
+.wizard ul li.complete .chevron:before {
+  border-left: 14px solid #62269e;
+}
+.wizard ul li.active .chevron:before {
+  border-left: 14px solid #fff;
+}
+.wizard ul li:first-child {
+  border-radius: 0;
+}
+.wizard ul li {
+  font-size: 15px;
+  background: none repeat scroll 0 0 #ededed;
+  color: #999999;
+  cursor: default;
+  float: left;
+  height: 46px;
+  line-height: 46px;
+  margin: 0;
+  padding: 0 20px 0 30px;
+  position: relative;
+  @media (min-width: 320px) and (max-width: 1024px)  {
+    display: inline-block;
+  }
+}
+.fuelux [class^="icon-"], .fuelux [class*=" icon-"] {
+  background-image: url("../js/bootstrap.wysihtml5/lib/img/glyphicons-halflings-white.png");
+}
+.wizard .icon-arrow-left {
+  background-position: -240px -95px;
+}
+.wizard .icon-arrow-right {
+  background-position: -264px -95px;
+}
 
+.wizard {
   .clearfix;
-
   border: 1px solid darken(#ffffff, 12%);
   border-radius: @border-radius-base;
   box-shadow: 0 1px 4px rgba(0,0,0,.065);
@@ -43,7 +121,7 @@
       position: relative;
       background: #ededed;
       color: @gray-light;
-      font-size: 16px;
+      font-size: 15px;
       cursor: not-allowed;
 
       .chevron {
@@ -139,6 +217,13 @@
       margin-right: 8px;
     }
 
+    .action-btn {
+      font-size: 100%;
+      margin: 0;
+      vertical-align: middle;
+      line-height: normal;
+    }
+
     .btn-prev {
       &[disabled] {
         cursor: not-allowed;
@@ -191,3 +276,37 @@
     }
   }
 }
+
+
+/*ADD FOLLOWING RESPONSIVE STYLES FOR FAP
+@media (max-width: 767px) {
+  .wizard-row .fuelux {
+    position: static;
+  }
+  .wizard-row {
+    margin-left: -60px;
+  }
+  .cl-mcont {
+    margin-left: 0px;
+  }
+}*/
+
+@media (max-width: 767px) {
+  .wizard-row .fuelux {
+    position: static;
+  }
+}
+/*
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .block-wizard .step-content {
+    width: 20%;
+    padding: 0px;
+  }
+  .fuelux .wizard ul li {
+    display: inline-block;
+  }
+  .fuelux .wizard ul li:first-child {
+    position: fixed;
+  }*/

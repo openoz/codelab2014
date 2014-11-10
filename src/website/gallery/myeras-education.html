@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html ng-controller="AppController" class="ng-scope"><head><style type="text/css">[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+
+    <base href="http://localhost:8888/">
+    <link rel="stylesheet" type="text/css" href=".tmp/aamc-styles.css">
+    <style>
+        .pull-bottom {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
+        .side-menu{
+            padding-top:40px;
+        }
+        .side-menu li:nth-child(n+2){
+            padding-left: 40px;
+            padding-bottom:25px;
+        }
+        .side-menu li a i {
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+<div id="head-nav" class="topbar navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-left">
+                <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Main</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Usability</a></li>
+                        <li><a href="website/guidelines/responsive.html">Responsive Design</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layouts<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Grid</a></li>
+                        <li><a href="#">Tiles</a></li>
+                        <li class="dropdown-submenu"><a href="#">Templates</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Content</a></li>
+                                <li><a href="#">Application</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Modals & Alerts</a></li>
+                        <li><a href="#">Tabs & Accordions</a></li>
+                        <li><a href="#">Lists & Trees</a></li>
+                        <li class="dropdown-submenu"><a href="#">Typography</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Fonts</a></li>
+                                <li><a href="#">Icons</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components<b class="caret"></b></a>
+                    <ul class="dropdown-menu col-menu-2">
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-bar-chart-o"></i>Tables</li>
+                                <li><a href="#">Basic Tables</a></li>
+                                <li><a href="#">Data Tables</a></li>
+                                <li><a href="#">CSS3 Data Grids</a></li>
+                                <li class="dropdown-header"><i class="fa fa-legal"></i>Forms</li>
+                                <li><a href="#">Basic Forms</a></li>
+                                <li><a href="#">Multi-select</a></li>
+                                <li><a href="#">Input Groups</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-gear"></i>Extras</li>
+                                <li><a href="#">DateRange Picker</a></li>
+                                <li><a href="#">Calendar</a></li>
+                                <li><a href="#">Spinners</a></li>
+                                <li><a href="#">Charts</a></li>
+                                <li><a href="#">Maps</a></li>
+                                <li><a href="#">Advanced Controls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="website/gallery/web-app.html">Web App Example</a></li>
+                        <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
+                        <li><a href="website/gallery/fap.html">FAP Example</a></li>
+                        <li><a href="website/gallery/eras-dws-web.html">MyERAS Example</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav not-nav ng-scope"></ul>
+            <aamc-account class="ng-scope">
+                <!--<style>
+                    #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
+                        margin-right: 10px;
+                    }
+                </style>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Kiran Devarakonda</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+                        <!-- ngIf: !isAuthenticated() -->
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- ngIf: isAuthenticated() -->
+                            <li ng-if="isAuthenticated()" class="ng-scope">
+                                <!--<a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>-->
+                                <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="glyphicon glyphicon-user"></i> My Account</a>
+                            </li><!-- end ngIf: isAuthenticated() -->
+                            <li><a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="#" class=""><i class="glyphicon glyphicon-user"></i>  Help</a></li>
+                            <!-- ngIf: isAuthenticated() -->
+                            <li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
+                            <li>
+                                <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
+                                <!-- ngIf: !isAuthenticated() -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul></aamc-account>
+        </div><!--/.nav-collapse animate-collapse -->
+    </div>
+</div>
+
+<div class="container-fluid">
+<div class="page-head">
+    <h1>Electronic Residency Application Service<small> &nbsp;2015 Calendar Year Application </small></h1>
+    <ol class="breadcrumb">
+        <li>Main</li>
+        <li class="active">My Application</li>
+    </ol>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="wizard">
+<ul class="steps" style="margin-left: 0">
+    <li data-step="1"><span class="badge badge-info">1</span>Personal<span class="chevron"></span></li>
+    <li data-step="2"><span class="badge">2</span>Biographic<span class="chevron"></span></li>
+    <li data-step="3" class="active"><span class="badge">3</span>Education<span class="chevron"></span></li>
+    <li data-step="4"><span class="badge">4</span>Experience<span class="chevron"></span></li>
+    <li data-step="5"><span class="badge">5</span>Licensure<span class="chevron"></span></li>
+    <li data-step="6"><span class="badge">6</span>Publications<span class="chevron"></span></li>
+    <li data-step="7"><span class="badge">7</span>Documents<span class="chevron"></span></li>
+    <li data-step="8"><span class="badge">8</span>Certify & Submit</li>
+</ul>
+
+<div id="step5" class="step-content tab-pane active">
+<div class="panel-body">
+<div id="tab1" class="tab-pane active">
+    <form  method="POST" class="form-horizontal wizardForm" name="schoolsForm" ng-submit="saveSchools()" novalidate>
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">High School</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-group required" ng-class="{'has-error': schoolsForm.highschoolCountryCode.$invalid  && submitted }">
+                    <label for="highschoolCountryCode" class="col-sm-3 control-label"><strong>Country</strong></label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="highschoolCountryCode"  ng-change="getHighSchoolStates()"  ng-model="formData.highSchool.countryCode" ng-options="obj.countryCode as obj.countryShort for obj in countries | orderBy:'countryShort'" required>
+                        </select>
+                        <p class="help-block" ng-show="schoolsForm.highschoolCountryCode.$invalid && submitted">
+                            Please specify Country
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="formData.highSchool.countryCode=='999'">
+                    <label for="otherCountry" class="col-sm-3 control-label"><strong>Country Name</strong></label>
+                    <div class="col-sm-6">
+
+                        <input type="text" name="otherCountry" data-ng-model="formData.highSchool.countryName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group required"  ng-class="{'has-error': states.length>0 &&  schoolsForm.highschoolStateCode.$invalid  && submitted }">
+                    <label for="highschoolStateCode" class="col-sm-3 control-label"><strong>State</strong></label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="highschoolStateCode" ng-show="states.length>0?true:false" ng-change="getHighSchoolCounties()" ng-model="formData.highSchool.stateCode" ng-options="obj.stateCode as obj.stateShortDesc for obj in states | orderBy:'stateShortDesc'" required>
+                            <option value="">(Pick One)</option>
+                        </select>
+                        <p class="help-block" ng-show="states.length>0 && schoolsForm.highschoolStateCode.$invalid && submitted">
+                            Please specify State.
+                        </p>
+                        <input type="text" class="form-control" disabled="true" ng-hide="states.length>0?true:false" id="hnonUSCanadaStates" name="hnonUSCanadaStates" value="NA">
+                    </div>
+                </div>
+
+                <div class="form-group required" ng-class="{'has-error': counties.length>0 &&  schoolsForm.highschoolCountyCode.$invalid  && submitted }">
+                    <label for="highschoolCountyCode" class="col-sm-3 control-label"><strong>County</strong></label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="highschoolCountyCode" ng-show="counties.length>0?true:false" ng-model="formData.highSchool.countyCode" ng-options="obj.countyCode as obj.countyShort for obj in counties | orderBy:'countyShort'" ng-change="getHighSchools()" required>
+                        </select>
+                        <p class="help-block" ng-show="counties.length>0 && schoolsForm.highschoolCountyCode.$invalid && submitted">
+                            Please specify County.
+                        </p>
+                        <input type="text" class="form-control" disabled="true" ng-hide="counties.length>0?true:false" id="hnonUSCanadaCounty" name="hnonUSCanadaStates" value="NA">
+                    </div>
+                </div>
+
+
+                <div class="form-group required" ng-class="{'has-error' : schoolsForm.highSchoolCode.$invalid && submitted}">
+                    <label for="highschoolSchoolName" class="col-sm-3 control-label"><strong>School</strong></label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="highSchoolCode" ng-model="formData.highSchool.schoolCode" ng-options="obj.highSchoolCode as obj.highSchoolShort for obj in highSchools | orderBy:'highSchoolShort'" required>
+
+                        </select>
+                        <p class="help-block" ng-show="schoolsForm.highSchoolCode.$invalid && submitted">
+                            Please specify High School.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="formData.highSchool.schoolCode=='111'">
+                    <label for="otherSchool" class="col-sm-3 control-label"><strong>School Name</strong></label>
+                    <div class="col-sm-6">
+
+                        <input type="text" name="otherSchool" data-ng-model="formData.highSchool.schoolName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group required" ng-class="{'has-error' : schoolsForm.highschoolCity.$invalid && submitted}">
+                    <label for="highschoolSchoolCity" class="col-sm-3 control-label"><strong>City</strong></label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="highschoolCity" name="highschoolCity" placeholder="School City" ng-model="formData.highSchool.city" required>
+                        <div class="help-block" ng-show="schoolsForm.highschoolCity.$invalid && submitted">
+                            Please specify High School city.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group required" ng-class="{'has-error' : schoolsForm.highschoolGraduationYear.$invalid && submitted}">
+                    <label for="gradYear" class="col-sm-3 control-label"><strong>Graduation Year</strong></label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="highschoolGraduationYear" name="highschoolGraduationYear" ng-model="formData.highSchool.graduationYear" required>
+                        <div class="help-block" ng-show="schoolsForm.highschoolGraduationYear.$invalid && submitted">
+                            Please specify Grad Year.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    </form></div>
+
+
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Colleges</h3>
+    </div>
+
+    <div class="panel-body">
+        <div role="alert" class="alert {{ alertClass }}" ng-if="colleges.length && flashMsg">
+            {{ flashMsg }}
+        </div>
+        <div role="alert" class="alert alert-info" ng-if="!colleges.length">
+            Please add at least one college.
+        </div>
+        <button class="btn btn-primary pull-right" ng-click="openDialogC()" type="button">Add College</button>
+
+        <div class="table-responsive clearfix">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>College Name</th>
+                    <th>Program</th>
+                    <th>Location</th>
+                    <th>major</th>
+                    <th>minor</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="college in colleges">
+                    <td>{{ college.scSchoolName }}</td>
+                    <td>{{ college.course }}</td>
+                    <td>{{ college.location}}</td>
+                    <td>{{ college.major}}</td>
+                    <td>{{ college.minor}}</td>
+                    <td>
+                        <i class="glyphicon glyphicon-remove" ng-click="removeSchool(college)" tooltip="Delete"></i>
+                        <i class="glyphicon glyphicon-edit" ng-click="editDialogC(college)" tooltip="Edit"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Prehealth Advisor and/or College Professors</h3>
+    </div>
+
+    <div class="panel-body">
+
+        <H4>Recommendation List</H4>
+        <div role="alert" class="alert {{ alertClass }}" ng-if="references.length && flashMsg">
+            {{ flashMsg }}
+        </div>
+        <div role="alert" class="alert alert-info" ng-if="!references.length">
+            Please add atleast Two References.
+        </div>
+        <p>On this section, you will begin entering a list of the people you are asking to provide a recommendation for you.In order to proceed to the next section, you must list two recommendations, The National Program Office will accept only two letters of recommendation.To get started, click Add Recommendor.</p><br>
+        <button class="btn btn-primary pull-right" ng-click="openDialogR()" type="button">Add Reference</button>
+
+        <div class="table-responsive clearfix">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th> Name</th>
+                    <th>Title</th>
+                    <th>Institution</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="reference in references">
+                    <td>{{ reference.name }}</td>
+                    <td>{{ reference.title}}</td>
+                    <td>{{reference.institution}}</td>
+                    <td>
+                        <i class="glyphicon glyphicon-remove" ng-click="removeReference(reference)" tooltip="Delete"></i>
+                        <i class="glyphicon glyphicon-edit" ng-click="editDialogR(reference)" tooltip="Edit"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Institutional Action</h3>
+    </div>
+
+    <div class="panel-body">
+        Where you ever the recipient of any institutional action by any college,medical,or dental school for unacceptable acadamic performance or conduct violation ,even though such action may not have interrupted your enrollment or required you to withdraw? Select "help" at the top of this screen for important instructions on answering this question. <strong>Note:This Question must be answered before your application is complete.</strong><br><br>
+        <!-- </div> -->
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="formData.instAction.isInstAction" value="false" ng-value="institutionalAction"> No
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="formData.instAction.isInstAction"  value="true" value="institutionalAction"> Yes
+                    </label>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="panel-body">  -->
+        <div class="textarea" ng-show="formData.institutionalAction === 'Y'">
+            If yes, you must briefly explain below.The space available for your explanation is 1,325 characters,or approximately 1/4 page. <br><br>
+            <textarea class="form-control" id="institutionalActionEssay" name="institutionalActionEssay" rows="10" cols="98"ng-model="formData.instAction.instActionDescription"ng-trim="false" minlength="1" maxlength="5300" spellcheck="true"></textarea>
+            <span class="pull-right">{{1325 - formData.institutionalActionEssay.essay.length}} characters left</span>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Post Secendory Experiences/Honors</h3>
+    </div>
+
+    <div class="panel-body">
+        In this section, you will be able to enter work and extra-curricular experiences, activities, honors and publications that you would like to bring to the attention of your designated program sites. Please enter each experience only once. You are limited to a maximum of 10 experiences. To get started, click "ADD".</strong><br><br>
+        <!-- </div> -->
+
+
+        <div role="alert" class="alert {{ alertClass }}" ng-if="activitiess.length && flashMsg">
+            {{ flashMsg }}
+        </div>
+        <button class="btn btn-primary pull-right" ng-click="openDialogA()" type="button">Add Experience</button>
+
+        <div class="table-responsive clearfix">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th> Experience Title</th>
+                    <th>Organization</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="activity in experiences">
+                    <td>{{ activity.title }}</td>
+                    <td>{{ activity.institution}}</td>
+
+                    <td>
+                        <i class="glyphicon glyphicon-remove" ng-click="removeActivity(activity)" tooltip="Delete"></i>
+                        <i class="glyphicon glyphicon-edit" ng-click="editDialogA(activity)" tooltip="Edit"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Other Information</h3>
+    </div>
+
+    <div class="panel-body">
+        <!--<div class="form-group required">-->
+        <!--<label for="Classification" class="col-sm-3 control-label"><strong>Classification</strong></label>-->
+        <!--<div class="col-sm-6">-->
+        <!--<select class="form-control" name="classification" ng-model="formData.highSchoolInfo.classification" >-->
+        <!--<option>freshman</option>-->
+        <!--<option> Sophomore </option>-->
+        <!--</select>-->
+        <!--<p class="help-block" ng-show="schoolsForm.classification.$invalid && submitted">-->
+        <!--Please specify Classification.-->
+        <!--</p> -->
+        <!--</div>-->
+        <!--</div>-->
+
+        <div class="form-group required" ng-class="{ 'has-error' :schoolsForm.classification.$invalid && submitted}">
+            <label for="Classif" name="Classif" class="col-sm-6 control-label">Classification</label>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="formData.classification" value="true" name="classification" required="!formData.classification"> Freshman
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="formData.classification"  value="false" name="classification" required="!formData.classification"> Sophomore
+                    </label>
+                    <p class="help-block" ng-show="schoolsForm.classification.$invalid && submitted">
+                        Please specify one
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</form></div>
+
+<ul class="pager">
+
+    `   <li class="previous">
+    <button class="btn btn-default pull-left" ng-click="previous()">&larr; Previous</button>
+</li>
+
+    <li class="save()">
+        <button class="btn btn-primary btn-default" type="button" ng-click="saveTempSchoolsInfo()">Save</button>
+    </li>
+
+    <li class="submit">
+        <button type="submit" class="btn btn-primary pull-right" ng-click="saveSchoolsInfo()">Save And Continue &rarr;</button>
+    </li>
+</ul>
+</form>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<footer class="footer footer-shadow hidden-xs">
+                <ul class="list-inline text-center hidden-sm hidden-xs">
+                    <li class="noborder">655 K Street, NW, Suite 100, Washington, DC, 20001-2399</li><li>
+                    <a alt="Contact Us" href="https://www.aamc.org/about/contact/" title="Contact Us">Contact Us</a>
+                </li>
+                    <li>
+                        <a alt="Follow Us" href="https://www.aamc.org/about/follow/" title="Follow Us">Follow Us</a>
+                    </li>
+                    <li>© 1995 - 2014 AAMC</li>
+                    <li>
+                        <a alt="Terms and Conditions" href="https://www.aamc.org/44864/terms.html" title="Terms and Conditions">Terms and Conditions</a>
+                    </li>
+                    <li>
+                        <a alt="Privacy Statement" href="https://www.aamc.org/44866/privacy.html" title="Privacy Statement">Privacy Statement</a>
+                    </li>
+                </ul>
+            </footer>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

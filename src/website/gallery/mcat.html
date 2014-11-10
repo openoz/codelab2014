@@ -1,1 +1,464 @@
-MCAT example goes here
+<!DOCTYPE html>
+<html lang="en"ng-app="TestModule" ng-controller="TestController">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.aamc.org/linkableblob/48882-143/favicon/aamc-favicon.ico">
+    <title>AAMC | MCAT SRS</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300,200,100' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap UI core CSS -->
+    <base href="http://localhost:8888/">
+    <link rel="stylesheet" type="text/css" href=".tmp/aamc-styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var app = angular.module('TestModule', []);
+        app.controller('TestController', function($scope, $filter) {
+            $scope.title = 'AAMC MCAT SRS';
+            $scope.heading = 'Medical College Admission Test';
+        });
+    </script>
+    <style>
+        .cl-mcont {
+            margin-left: 50px;
+        }
+        .widget-block .header h3, .block-flat .header h3 {
+            font-weight: 400;
+        }
+        h6 {
+            float: left;
+            font-size: 48px;
+            padding: 20px;
+            border: 1px solid #CCC;
+            background-color: #EFEFEF;
+            border-radius: 5px;
+            margin-right: 20px;
+            color: #777;
+            text-align: center;
+        }
+
+        h6 div {
+            font-size:14px;
+        }
+
+        table tr.selected {
+            background-color: #C0EDE4;
+        }
+
+        tr td {
+            cursor: pointer;
+        }
+
+        th a {
+            text-decoration: none;
+            font-weight: 600;
+            color: inherit;
+            font-size: 1em;
+        }
+        th a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+        tr a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+        .schoolsheader {
+            float: right;
+            width: 20%;
+        }
+
+        .fd-tile.tile-redMint .details {
+            background-color: #C0EDE4;
+        }
+
+        .schoolstile {
+            float:right;
+        }
+
+        input:placeholder {
+            font-style: italic;
+        }
+        th img {
+            float: right;
+        }
+        .pagination {
+            margin-bottom: 5px;
+        }
+        .schoolsearch {
+            width: 220px;
+            font-style:italic;
+            font-size:13px;
+        }
+
+
+        /*ADD FOLLOWING RESPONSIVE STYLES FOR FAP*/
+        @media (max-width: 767px) {
+            .wizard-row .fuelux {
+                position: static;
+            }
+            .wizard-row {
+                margin-left: -60px;
+            }
+            .cl-mcont {
+                margin-left: 0px;
+            }
+        }
+    </style>
+
+</head>
+<body class="animated">
+
+<div id="wrapper">
+<div id="head-nav" class="topbar navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-left">
+                <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Main</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Usability</a></li>
+                        <li><a href="website/guidelines/responsive.html">Responsive Design</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layouts<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Grid</a></li>
+                        <li><a href="#">Tiles</a></li>
+                        <li class="dropdown-submenu"><a href="#">Templates</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Content</a></li>
+                                <li><a href="#">Application</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Modals & Alerts</a></li>
+                        <li><a href="#">Tabs & Accordions</a></li>
+                        <li><a href="#">Lists & Trees</a></li>
+                        <li class="dropdown-submenu"><a href="#">Typography</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Fonts</a></li>
+                                <li><a href="#">Icons</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components<b class="caret"></b></a>
+                    <ul class="dropdown-menu col-menu-2">
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-bar-chart-o"></i>Tables</li>
+                                <li><a href="#">Basic Tables</a></li>
+                                <li><a href="#">Data Tables</a></li>
+                                <li><a href="#">CSS3 Data Grids</a></li>
+                                <li class="dropdown-header"><i class="fa fa-legal"></i>Forms</li>
+                                <li><a href="#">Basic Forms</a></li>
+                                <li><a href="#">Multi-select</a></li>
+                                <li><a href="#">Input Groups</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-gear"></i>Extras</li>
+                                <li><a href="#">DateRange Picker</a></li>
+                                <li><a href="#">Calendar</a></li>
+                                <li><a href="#">Spinners</a></li>
+                                <li><a href="#">Charts</a></li>
+                                <li><a href="#">Maps</a></li>
+                                <li><a href="#">Advanced Controls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="website/gallery/web-app.html">Web App Example</a></li>
+                        <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
+                        <li><a href="website/gallery/fap.html">FAP Example</a></li>
+                        <li><a href="website/gallery/eras-dws-web.html">MyERAS Example</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ng-scope"></ul>
+            <aamc-account class="ng-scope">
+                <style>
+                    #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
+                        margin-right: 10px;
+                    }
+                </style>
+                <ul class="nav navbar-nav navbar-right user-nav">
+
+                    <li class="dropdown">
+                        <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Kiran Devarakonda</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+                        <!-- ngIf: !isAuthenticated() -->
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- ngIf: isAuthenticated() -->
+                            <li ng-if="isAuthenticated()" class="ng-scope">
+                                <!--<a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>-->
+                                <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="glyphicon glyphicon-user"></i> My Account</a>
+                            </li><!-- end ngIf: isAuthenticated() -->
+                            <li><a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="#" class=""><i class="fa fa-user"></i>  Help</li>
+                            <!-- ngIf: isAuthenticated() -->
+                            <li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
+                            <li>
+                                <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
+                                <!-- ngIf: !isAuthenticated() -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul></aamc-account>
+            <ul class="nav navbar-nav not-nav navbar-right">
+                <li class="button dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bug"></i></a>
+                    <ul class="dropdown-menu">
+
+                        <h4 class="color-danger text-center">Report a Problem</h4>
+                        <form class="form-horizontal">
+                            <!-- TO - static -->
+                            <div class="form-group no-margin">
+                                <label class="col-sm-2 control-label no-padding">To</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static no-padding">mcat@aamc.org</p>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- FROM - static -->
+                            <div class="form-group no-margin">
+                                <label class="col-sm-2 control-label no-padding">From</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static no-padding">Stephanie Z.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <!--EMAIL-->
+                            <div class="form-group no-margin" ng-class="{'has-error': problem_form.email.$dirty && problem_form.email.$invalid}">
+                                <label class="col-sm-2 control-label no-padding">Email</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static no-padding">szandieh@aamc.org</p>
+                                </div>
+                            </div>
+                            <br>
+                            <!--SUBJECT-->
+                            <div class="form-group no-margin" ng-class="{'has-error': (reportProb.submitted || problem_form.subject.hasVisited) && problem_form.subject.$invalid }">
+                                <label class="col-sm-2 control-label no-padding">Subject</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="subject" ng-model="reportProb.subject" ng-minlength="1" maxlength="256" ng-maxlength="256" ng-trim="false" required track-blur-focus />
+                                    <div class="error pull-left" ng-show="(reportProb.submitted || problem_form.subject.hasVisited) && problem_form.subject.$invalid">
+                                       <!-- <span class="error" ng-show="problem_form.subject.$error.required">subject can't be blank</span>
+                                        <span class="error" ng-show="problem_form.subject.$error.maxlength">subject can't be longer then 256 characters</span>-->
+                                    </div>
+                                    <div class="character-count help-block pull-right">Remaining characters: 250</div>
+                                </div>
+                            </div>
+                            <br>
+                            <!--DETAILS-->
+                            <div class="form-group no-margin" ng-class="{'has-error': (reportProb.submitted || problem_form.details.hasVisited) && problem_form.details.$invalid }">
+                                <label class="col-sm-2 control-label no-padding">Details</label>
+                                <div class="col-sm-10">
+                                    <textarea type="text" class="form-control" name="details" ng-model="reportProb.details" rows="8" ng-minlength="1" maxlength="4000" ng-maxlength="4000" ng-trim="false" required track-blur-focus></textarea>
+                                    <div class="error pull-left" ng-show="(reportProb.submitted || problem_form.details.hasVisited) && problem_form.details.$invalid">
+                                        <!--<span class="error" ng-show="problem_form.details.$error.required">detail field can't be blank</span>
+                                        <span class="error" ng-show="problem_form.details.$error.maxlength">detail field can't be longer then 4000 characters</span>-->
+                                    </div>
+                                    <div class="character-count help-block pull-right">Remaining characters: 2000 </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!--SUBMIT-->
+                            <div class="form-group no-margin" style="margin-right:0px;">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary no-margin">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse animate-collapse -->
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="page-head">
+        <h1>Medical College Admission Test<small> &nbsp;2014 Calendar Year Application </small></h1>
+        <ol class="breadcrumb">
+            <li class="active">Home</li>
+
+        </ol>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning alert-white-alt rounded">
+                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                <div class="icon">
+                    <i class="fa fa-info-circle"></i>
+                </div>
+                <strong>Alert!</strong>
+                You have MCAT scores on hold. Please contact mcat@aamc.org as soon as possible!</div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="fd-tile detail clean tile-purple">
+                <div class="content col-md-11">
+                    <h2 class="text-left">John Doe</h2>
+                    <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                        <dt>AAMC ID</dt>
+                        <dd>13534277<!--{{examinee.aamcId}}--></dd>
+                    </dl>
+                    <br><br>
+                    <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                        <dt>Date of Birth</dt>
+                        <dd>02/02/1990<!--{{examinee.aamcId}}--></dd>
+                    </dl>
+                    <!-- <button class="btn btn-info btn-rad pull-right"><i class="fa fa-upload fa-fw"></i> Upload Documents</button>-->
+                </div>
+                <div class="icon"><i class="fa fa-user"></i></div>
+                <a class="details" href="#">report a problem<span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="fd-tile detail clean tile-prusia">
+                <div class="content col-md-11">
+                    <h2 class="text-left">Exam Dates</h2>
+
+                    <dl class="dl-horizontal col-md-8 col-md-offset-1">
+                        <dt>05/22/2015</dt>
+                        <dd><a href="#">View Details</a></dd>
+                    </dl>
+                    <dl class="dl-horizontal col-md-8 col-md-offset-1">
+                        <dt>04/18/2015</dt>
+                        <dd><a href="#">View Details</a></dd>
+                    </dl>
+                    <dl class="dl-horizontal col-md-8 col-md-offset-1">
+                        <dt>03/17/2015</dt>
+                        <dd><a href="#">View Details</a></dd>
+                    </dl>
+                    <!-- <dl class="dl-horizontal col-md-4">
+                        <dt>Review & Submit</dt>
+                        <dd>New</dd>
+                     </dl>-->
+                </div>
+                <div class="icon"><i class="fa fa-pencil-square-o"></i></div>
+                <a class="details" href="#">View recent exam detail report</a>
+            </div>
+        </div><!--ends col--->
+
+        <!--<div class="col-md-4 col-sm-6">
+         <div class="fd-tile detail clean tile-prusia">
+           <div class="content col-md-11">
+             <h2 class="text-left">Summary Report</h2>
+               <dl class="dl-horizontal col-md-4"><br>
+                 <dt></dt>
+                 <dd></dd>
+              </dl>
+           </div>
+           <div class="icon"><i class="fa fa-eye"></i></div>
+           <a class="details" href="#">View Details<span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
+         </div>
+       </div>  -->
+
+    </div><!--ends row-->
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <div class="fd-tile detail clean tile-red">
+                <div class="content col-md-11">
+                    <h2 class="text-left">Important Dates</h2>
+                    <div class="col-md-11 col-sm-6 col-md-offset-1" style="margin-bottom:20px;">
+                        <p><a class="btn-link" href="https://www.aamc.org/students/applying/mcat/reserving/355164/scorereleaseschedule.html" target="_blank">View the MCAT Score Release Schedule</a> for release dates.
+                        </p>
+                    </div>
+                    <div class="col-md-11 col-sm-6 col-md-offset-1" style="margin-bottom:30px;">
+                        <p><a class="btn-link" href="https://www.aamc.org/students/applying/mcat/reserving/261800/registrationdeadlines.html" target="_blank">View the MCAT Registration Calendar</a> for upcoming exam dates.
+                        </p>
+                    </div>
+                    <!-- <button class="btn btn-info btn-rad pull-right"><i class="fa fa-upload fa-fw"></i> Upload Documents</button>-->
+                </div>
+                <div class="icon"><i class="fa fa-flag"></i></div>
+                <a class="details" href="#">View MCAT Administration calendar<span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="fd-tile detail clean tile-green">
+                <div class="content col-md-11">
+                    <h2 class="text-left">Score History</h2>
+
+                    <dl class="dl-horizontal col-md-8 col-md-offset-1">
+                        <dt>After 01/31/2015</dt>
+                        <dd><a href="#">View Scores</a></dd>
+                    </dl>
+                    <dl class="dl-horizontal col-md-8 col-md-offset-1">
+                        <dt>Before 01/31/2015</dt>
+                        <dd><a href="#">View Scores</a></dd>
+                    </dl>
+                    <br>
+
+                    <!-- <dl class="dl-horizontal col-md-4">
+                        <dt>Review & Submit</dt>
+                        <dd>New</dd>
+                     </dl>-->
+                </div>
+                <div class="icon"><i class="fa fa-pencil-calendar-o"></i></div>
+                <a class="details" href="#">View MCAT all Deadlines</a>
+            </div>
+        </div>
+    </div> <!--ends bottom row-->
+
+   <footer class="footer footer-shadow hidden-xs">
+    <ul class="list-inline text-center hidden-sm hidden-xs">
+        <li class="noborder">655 K Street, NW, Suite 100, Washington, DC, 20001-2399</li><li>
+        <a alt="Contact Us" href="https://www.aamc.org/about/contact/" title="Contact Us">Contact Us</a>
+    </li>
+        <li>
+            <a alt="Follow Us" href="https://www.aamc.org/about/follow/" title="Follow Us">Follow Us</a>
+        </li>
+        <li>© 1995 - 2014 AAMC</li>
+        <li>
+            <a alt="Terms and Conditions" href="https://www.aamc.org/44864/terms.html" title="Terms and Conditions">Terms and Conditions</a>
+        </li>
+        <li>
+            <a alt="Privacy Statement" href="https://www.aamc.org/44866/privacy.html" title="Privacy Statement">Privacy Statement</a>
+        </li>
+    </ul>
+</footer>
+</div>
+</div>
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

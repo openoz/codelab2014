@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html ng-controller="AppController" class="ng-scope"><head><style type="text/css">[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+
+    <base href="http://localhost:8888/">
+    <link rel="stylesheet" type="text/css" href=".tmp/aamc-styles.css">
+    <style>
+        .pull-bottom {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
+        .side-menu{
+            padding-top:40px;
+        }
+        .side-menu li:nth-child(n+2){
+            padding-left: 40px;
+            padding-bottom:25px;
+        }
+        .side-menu li a i {
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+<div id="head-nav" class="topbar navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-left">
+                <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Main</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Usability</a></li>
+                        <li><a href="website/guidelines/responsive.html">Responsive Design</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layouts<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Grid</a></li>
+                        <li><a href="#">Tiles</a></li>
+                        <li class="dropdown-submenu"><a href="#">Templates</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Content</a></li>
+                                <li><a href="#">Application</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Modals & Alerts</a></li>
+                        <li><a href="#">Tabs & Accordions</a></li>
+                        <li><a href="#">Lists & Trees</a></li>
+                        <li class="dropdown-submenu"><a href="#">Typography</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Fonts</a></li>
+                                <li><a href="#">Icons</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components<b class="caret"></b></a>
+                    <ul class="dropdown-menu col-menu-2">
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-bar-chart-o"></i>Tables</li>
+                                <li><a href="#">Basic Tables</a></li>
+                                <li><a href="#">Data Tables</a></li>
+                                <li><a href="#">CSS3 Data Grids</a></li>
+                                <li class="dropdown-header"><i class="fa fa-legal"></i>Forms</li>
+                                <li><a href="#">Basic Forms</a></li>
+                                <li><a href="#">Multi-select</a></li>
+                                <li><a href="#">Input Groups</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-sm-6 no-padding">
+                            <ul>
+                                <li class="dropdown-header"><i class="fa fa-gear"></i>Extras</li>
+                                <li><a href="#">DateRange Picker</a></li>
+                                <li><a href="#">Calendar</a></li>
+                                <li><a href="#">Spinners</a></li>
+                                <li><a href="#">Charts</a></li>
+                                <li><a href="#">Maps</a></li>
+                                <li><a href="#">Advanced Controls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="website/gallery/web-app.html">Web App Example</a></li>
+                        <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
+                        <li><a href="website/gallery/fap.html">FAP Example</a></li>
+                        <li><a href="website/gallery/eras-dws-web.html">MyERAS Example</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav not-nav ng-scope"></ul>
+            <aamc-account class="ng-scope">
+                <!--<style>
+                    #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
+                        margin-right: 10px;
+                    }
+                </style>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Kiran Devarakonda</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+                        <!-- ngIf: !isAuthenticated() -->
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- ngIf: isAuthenticated() -->
+                            <li ng-if="isAuthenticated()" class="ng-scope">
+                                <!--<a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>-->
+                                <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="glyphicon glyphicon-user"></i> My Account</a>
+                            </li><!-- end ngIf: isAuthenticated() -->
+                            <li><a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="#" class=""><i class="glyphicon glyphicon-user"></i>  Help</a></li>
+                            <!-- ngIf: isAuthenticated() -->
+                            <li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
+                            <li>
+                                <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
+                                <!-- ngIf: !isAuthenticated() -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul></aamc-account>
+        </div><!--/.nav-collapse animate-collapse -->
+    </div>
+</div>
+
+<div class="container-fluid">
+<div class="page-head">
+    <h1>Electronic Residency Application Service<small> &nbsp;2015 Calendar Year Application </small></h1>
+    <ol class="breadcrumb">
+        <li>Main</li>
+        <li class="active">My Application</li>
+    </ol>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body no-padding">
+        <div class="block-wizard">
+            <div class="wizard">
+                <ul class="steps" style="margin-left: 0">
+                    <li data-step="1" class="active">Personal<span class="chevron"></span></li>
+                    <li data-step="2">Biographic<span class="chevron"></span></li>
+                    <li data-step="3">Education<span class="chevron"></span></li>
+                    <li data-step="4">Experience<span class="chevron"></span></li>
+                    <li data-step="5">Licensure<span class="chevron"></span></li>
+                    <li data-step="6">Publications<span class="chevron"></span></li>
+                    <li data-step="7">Documents<span class="chevron"></span></li>
+                    <li data-step="8">Certify & Submit</li>
+                </ul>
+                <div class="actions pull-right">
+                    <button type="button" class="btn btn-xs btn-prev btn-primary action-btn"> <i class="fa fa-arrow-left"></i>Prev</button>
+                    <button type="button" class="btn btn-xs btn-next btn-primary action-btn" data-last="Finish">Next<i class="fa fa-arrow-right"></i></button>
+                </div>
+            </div>
+<div id="step1" class="step-content tab-pane active">
+<div class="panel-body">
+ 	<!-- {{ personalForm.$error }} and {{ formData }} -->
+	<form method="POST" class="form-horizontal wizardForm" name="personalForm" ng-submit="savePersonalInfo()" novalidate>
+ 	<!-- <div class="row">
+5 	<div class="col-sm-12">
+6 	<h4>Names</h4>
+7 	</div>
+8
+9 	<div class="col-sm-offset-3 col-sm-6"> -->
+ 	<div class="panel panel-default">
+     	<div class="panel-heading">
+    	<strong>Names</strong>
+     	</div>
+     	<div class="panel-body">
+
+            <div class="form-group required" ng-class="{'has-error': personalForm.namePrefix.$invalid && submitted }">
+                <label for="namePrefix" class="col-sm-3 control-label">
+                    <span ng-show="question.answerRequired==1" class="text-danger"><strong>*</strong></span><strong> Name Prefix</strong>
+                </label>
+                <div class="col-sm-3">
+                    <select class="form-control" id="namePrefix" name="namePrefix" ng-model="formData.namePrefix" ng-options="obj.salutationCode as obj.salutationDesc for obj in prefixes | orderBy:'salutationDesc'" required>
+                        <option value="">Select One</option>
+                        <option>Mr.</option>
+                        <option>Mrs.</option>
+                        <option>Ms.</option>
+                        <option>Miss</option>
+                        <option>Dr.</option>
+                        <option>Sr.</option>
+                        <option>Sis.</option>
+                        <option>Rev.</option>
+                        <option>Prof.</option>
+                        <option>Dean.</option>
+                        <option>Rabbi.</option>
+                        <option>Col.</option>
+                    </select>
+                    <!--<p class="help-block" ng-show="personalForm.namePrefix.$invalid && submitted">
+                   NamePrefix Required
+                  </p>-->
+                </div>
+                <!-- <div class="col-md-3">
+        104 	<p class="help-block" ng-show="personalForm.namePrefix.$invalid && submitted">
+        105 	NamePrefix Required
+        106 	</p>
+        107 	</div> -->
+            </div>
+     	<div class="form-group required" ng-class="{'has-error': personalForm.firstName.$invalid && submitted}">
+     	<label for="firstName" class="col-sm-3 control-label">
+        <span ng-show="question.answerRequired==1" class="text-danger"><strong>*</strong></span><strong> First Name</strong>
+     	</label>
+     	<div class="col-sm-6">
+
+     	<input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required placeholder="First Name"/>
+     	<!-- <p class="help-block" ng-if="personalForm.firstName.$error.required">The user's name is required</p> -->
+     	<!-- <input type="text" class="form-control" id="firstName" name="firstName" ng-model="formData.firstName" required>
+ 	<p class="help-block" ng-if="personalForm.firstName.$error.required">The user's name is required</p> -->
+    <!-- <p class="help-block"ng-show="personalForm.firstName.$error.required && personalForm.firstName.$dirty">Please enter your name!
+ 	</p> -->
+     	<!--<p class="help-block" ng-show="personalForm.firstName.$invalid && submitted">
+     	Your Firstname is required.
+     	</p>-->
+     	</div>
+     	<!-- <div class="col-md-3">
+38 	<p class="help-block" ng-show="personalForm.firstName.$invalid && submitted">
+39 	Your Firstname is required.
+40 	</p>
+41 	</div> -->
+
+
+     	</div>
+     	<div class="form-group" >
+     	<label for="middleName" class="col-sm-3 control-label">
+     	<strong>Middle Name</strong>
+     	</label>
+    	<div class="col-sm-6">
+     	<input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" ng-model="formData.middleName">
+     	</div>
+
+     	</div>
+     	<!-- <div class="form-group required" ng-class="{ 'has-error' : personalForm.lastName.$invalid && personalForm.lastName.$dirty }">
+55 	<label for="lastName" class="col-sm-3 control-label"><strong>Last Name</strong></label>
+56 	<div class="col-sm-6">
+57 	<input type="text" class="form-control" id="lastName" name="lastName" ng-model="formData.lastName" required>
+58 	<p class="help-block" ng-show="personalForm.lastName.$error.required && personalForm.lastName.$dirty">Please enter required last name</p>
+59 	</div>
+60 	</div> -->
+     	<div class="form-group required" ng-class="{'has-error': personalForm.lastName.$invalid && submitted || personalForm.lastName.$invalid && personalForm.lastName.$dirty }">
+     	<label for="lastName" class="col-sm-3 control-label">
+        <span ng-show="question.answerRequired==1" class="text-danger"><strong>*</strong></span><strong> Last Name</strong>
+     	</label>
+     	<div class="col-sm-6">
+
+     	<input type="text" name="lastName" data-ng-model="formData.lastName" class="form-control" placeholder="Last Name" required />
+     	<!--<p class="help-block" ng-show="personalForm.lastName.$invalid && submitted || personalForm.lastName.$invalid && personalForm.lastName.$dirty">
+     	Your Last Name is required.
+     	</p>
+     	</div>
+    	<!-- <div class="col-md-3">
+73 	<p class="help-block" ng-show="personalForm.lastName.$invalid && submitted">
+74 	Your Last Name is required.
+75 	</p>
+76 	</div> -->
+    	</div>
+      </div>
+
+   	<div class="form-group">
+
+    <label for="nameSuffix" class="col-sm-3 control-label">
+    	<strong>Name Suffix</strong>
+    </label>
+   <div class="col-sm-3">
+   <select class="form-control" name="nameSuffix" ng-model="formData.nameSuffix">
+   <option>I</option>
+  <option>II</option>
+ 	<option>III</option>
+   	<option>IV</option>
+    	<option>V</option>
+    	<option>VI</option>
+   	<option>VII</option>
+   	<option>VIII</option>
+   	<option>IX</option>
+    	<option>X</option>
+    	<option>jr.</option>
+     	<option>Sr.</option>
+     	</select>
+   	</div>
+    	</div>
+     	</div>
+   	</div>
+
+	<!--preferrdContactDetails-->
+
+
+	<div class="panel panel-default">
+     	<div class="panel-heading">
+     	<strong>Preferred Mailing Address</strong>
+     	</div>
+     	<div class="panel-body">
+     	<div class="form-group required" ng-class="{'has-error': personalForm.precountryCode.$invalid && submitted }">
+     	<label for="countryCode" class="col-sm-3 control-label">
+     	<strong>Country</strong>
+     	</label>
+     	<div class="col-sm-6">
+     	<select class="form-control" name="precountryCode" ng-change="getPreferredStates()" ng-model="formData.preferredContactDetails.countryCode" ng-options="obj.countryCode as obj.countryShort for obj in countries | orderBy:'countryShort'" required>
+     	<option value="">(Pick One)</option>
+     	</select>
+     	<p class="help-block" ng-show="personalForm.precountryCode.$invalid && submitted">
+     	Please specify Country
+     	</p>
+     	</div>
+     	<!-- <div class="col-md-3">
+157 	<p class="help-block" ng-show="personalForm.precountryCode.$invalid && submitted">
+158 	Please specify Country
+159 	</p>
+160 	</div> -->
+     	</div>
+     	<div class="form-group" ng-show="formData.preferredContactDetails.countryCode=='999'">
+     	<label for="otherCountry" class="col-sm-3 control-label"><strong>Country Name</strong></label>
+     	<div class="col-sm-6">
+
+     	<input type="text" name="otherCountry" data-ng-model="formData.preferredContactDetails.countryName" class="form-control">
+     	</div>
+     	</div>
+
+     	<div class="form-group required" ng-class="{'has-error': personalForm.preaddressLine1.$invalid && submitted }">
+     	<label for="lastName" class="col-sm-3 control-label">
+     	<strong>Address Line1</strong>
+     	</label>
+     	<div class="col-sm-6">
+
+     	<input type="text" name="preaddressLine1" placeholder="Address line 1" data-ng-model="formData.preferredContactDetails.addressLine1" class="form-control" required />
+     	<p class="help-block" ng-show="personalForm.preaddressLine1.$invalid && submitted">
+     	Your Address Line1 is required.
+     	</p>
+     	</div>
+     	<!-- <div class="col-md-3">
+182 	<p class="help-block" ng-show="personalForm.preaddressLine1.$invalid && submitted">
+183 	Your Address Line1 is required.
+184 	</p>
+185 	</div> -->
+     	</div>
+
+     	<div class="form-group">
+     	<label for="addressLine2" class="col-sm-3 control-label">
+     	<strong>Address Line2</strong>
+     	</label>
+     	<div class="col-sm-6">
+     	<input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Address line 2" ng-model="formData.preferredContactDetails.addressLine2">
+     	</div>
+     	</div>
+
+     	<div class="form-group required" ng-class="{'has-error': personalForm.precity.$invalid && submitted }">
+     	<label for="city" class="col-sm-3 control-label">
+     	<strong>City</strong>
+     	</label>
+     	<div class="col-sm-6">
+
+     	<input type="text" name="precity" data-ng-model="formData.preferredContactDetails.city" class="form-control" placeholder="City" required />
+     	<p class="help-block" ng-show="personalForm.precity.$invalid && submitted">
+     	Please Enter your City.
+     	</p>
+     	</div>
+     	<!-- <div class="col-md-3">
+210 	<p class="help-block" ng-show="personalForm.precity.$invalid && submitted">
+211 	Please Enter your City.
+212 	</p>
+213 	</div> -->
+     	</div>
+     	<div class="form-group required" ng-class="{'has-error': states.length > 0 && personalForm.prestateCode.$invalid && submitted }">
+     	<label for="StateCode" class="col-sm-3 control-label">
+     	<strong>State</strong>
+     	</label>
+     	<div class="col-sm-6">
+     	<select class="form-control" ng-show="states.length>0?true:false" name="prestateCode" ng-change="getPreferredCounties()" ng-model="formData.preferredContactDetails.stateCode" ng-options="obj.stateCode as obj.stateShortDesc for obj in states | orderBy:'stateShortDesc'" required>
+
+     	<option value="">(Pick One)</option>
+     	</select>
+
+     	<input type="text" class="form-control" disabled="true" ng-hide="states.length>0?true:false" id="pnonUSCanadaStates" name="pnonUSCanadaStates" value="NA">
+     	<p class="help-block" ng-show="states.length > 0 && persoalForm.prestateCode.$invalid && submitted">Please Specify Preferred State</p>
+
+     	</div>
+     	</div>
+     	<div class="form-group required" ng-class="{'has-error': counties.length > 0 && personalForm.precountyCode.$invalid && submitted }">
+     	<label for="countyCode" class="col-sm-3 control-label">
+     	<strong>County</strong>
+     	</label>
+     	<div class="col-sm-6">
+     	<select class="form-control" name="precountyCode" ng-show="counties.length>0?true:false" ng-model="formData.preferredContactDetails.countyCode" ng-options="obj.countyCode as obj.countyShort for obj in counties | orderBy:'countyShort'" required>
+     	<option value="">(Pick One)</option>
+
+     	</select>
+     	<input type="text" class="form-control" disabled="true" ng-hide="counties.length>0?true:false" id="pnonUSCanadaCounty" name="pnonUSCanadaStates" value="NA">
+     	<p class="help-block" ng-show="counties.length > 0 && persoalForm.precountycode.$invalid && submitted">Please Specify Preferred County</p>
+
+
+     	</div>
+     	</div>
+     	<div class="form-group required" ng-class="{'has-error': personalForm.prezipCode.$invalid && submitted }">
+     	<label for="zipCode" class="col-sm-3 control-label">
+     	<strong>Zip Code</strong>
+     	</label>
+     	<div class="col-sm-6">
+
+     	<input type="zip" name="prezipCode" data-ng-model="formData.preferredContactDetails.zipCode" class="form-control" placeholder="Zip Code" required ng-maxlength="5" ng-minlength="5" >
+     	<p class="help-block" ng-show="personalForm.prezipCode.$error.required && submitted">
+     	Please Enter your Zip Code.</p>
+     	<p class="help-block" ng-show="personalForm.prezipCode.$error.zip && submitted">Should be numeric only</p>
+     	<p class="help-block" ng-show="personalForm.prezipCode.$error.maxlength && submitted">max 5 digit please!</p>
+     	<p class="help-block" ng-show="personalForm.prezipCode.$error.minlength && submitted">zip code contains min 5 digits!</p>
+     	</div>
+     	</div>
+     	<div class="form-group required" ng-class="{'has-error': personalForm.predayPhoneNumber.$invalid && submitted }">
+     	<label for="dayPhoneNumber" class="col-sm-3 control-label">
+     	<strong>Day Time Phone Number</strong>
+     	</label>
+     	<div class="col-sm-6">
+
+     	<input type="tel" class="form-control" id="dayPhoneNumber" name="predayPhoneNumber" placeholder="Day Time Phone" ng-model="formData.preferredContactDetails.dayPhoneNumber" required ng-maxlength="10" ng-minlength="10">
+     	<p class="help-block" ng-show="personalForm.predayPhoneNumber.$error.required && submitted">
+     	Your cellPhoneNumber is required.</p>
+
+        </div>
+       </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <button data-wizard="#wizard1" class="btn btn-default wizard-previous"><i class="fa fa-caret-left"></i> Back</button>
+            <button data-wizard="#wizard1" class="btn btn-primary wizard-next pull-right">Save and Continue <i class="fa fa-caret-right"></i></button>
+        </div>
+    </div><!--end form-group-->
+    </form>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="footer footer-shadow hidden-xs">
+                <ul class="list-inline text-center hidden-sm hidden-xs">
+                    <li class="noborder">655 K Street, NW, Suite 100, Washington, DC, 20001-2399</li><li>
+                    <a alt="Contact Us" href="https://www.aamc.org/about/contact/" title="Contact Us">Contact Us</a>
+                </li>
+                    <li>
+                        <a alt="Follow Us" href="https://www.aamc.org/about/follow/" title="Follow Us">Follow Us</a>
+                    </li>
+                    <li>© 1995 - 2014 AAMC</li>
+                    <li>
+                        <a alt="Terms and Conditions" href="https://www.aamc.org/44864/terms.html" title="Terms and Conditions">Terms and Conditions</a>
+                    </li>
+                    <li>
+                        <a alt="Privacy Statement" href="https://www.aamc.org/44866/privacy.html" title="Privacy Statement">Privacy Statement</a>
+                    </li>
+                </ul>
+</footer>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

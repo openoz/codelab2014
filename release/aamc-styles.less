@@ -11,3 +11,41 @@
 
 //
 @import "aamc-styles/main.less";
+
+
+/*RESPONSIVE STYLES*/
+@media (min-width: 768px) and (max-width: 979px) {
+  .butstyle {
+    width: 30.9%;
+  }
+
+  .butstyle:first-child {
+    margin-left: 0;
+  }
+
+  .navbar-default .navbar-brand {
+    background-position: 0 11px;
+    height: 50px;
+    width: 45px;
+    padding-left: 26px;
+  }
+
+  .navbar-default .navbar-brand span {
+    display: none;
+  }
+
+  .sidebar-logo {
+    padding: 4px 0 5px;
+    background: url("../images/aamcLogoSmWht.png") no-repeat scroll 23px -48px #62269E;
+  }
+
+  #head-nav.topbar .sidebar-logo {
+    display: inline-block;
+    width: 70px;
+    float: left;
+  }
+
+  #head-nav.topbar .navbar-collapse {
+    padding-left: 0;
+  }
+}

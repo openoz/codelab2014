@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>AAMC UI|UX Styles</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
 
@@ -10,41 +10,132 @@
     
   </head>
   <body>
-    <div id="head-nav" class="topbar navbar navbar-default">
+  <div id="wrapper">
+  <div id="head-nav" class="topbar navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-left">
-            <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-left">
+                  <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
+              </div>
           </div>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/">AAMC Styles</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="website/guidelines/responsive.html">Responsive Design</a></li>
-                <li><a href="#">Accessiblility</a></li>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="/" class="active">Main</a></li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="website/guidelines/usability.html">Usability</a></li>
+                          <li><a href="website/guidelines/responsive.html">Responsiveness</a></li>
+                          <li><a href="website/guidelines/accessibility.html">Accessibility</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layouts<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Grid</a></li>
+                          <li><a href="#">Tiles</a></li>
+                          <li class="dropdown-submenu"><a href="#">Templates</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Content</a></li>
+                                  <li><a href="#">Application</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Buttons</a></li>
+                          <li><a href="#">Modals & Alerts</a></li>
+                          <li><a href="#">Tabs & Accordions</a></li>
+                          <li><a href="#">Lists & Trees</a></li>
+                          <li class="dropdown-submenu"><a href="#">Typography</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Fonts</a></li>
+                                  <li><a href="#">Icons</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components<b class="caret"></b></a>
+                      <ul class="dropdown-menu col-menu-2">
+                          <li class="col-sm-6 no-padding">
+                              <ul>
+                                  <li class="dropdown-header"><i class="fa fa-bar-chart-o"></i>Tables</li>
+                                  <li><a href="#">Basic Tables</a></li>
+                                  <li><a href="#">Data Tables</a></li>
+                                  <li><a href="#">CSS3 Data Grids</a></li>
+                                  <li class="dropdown-header"><i class="fa fa-legal"></i>Forms</li>
+                                  <li><a href="#">Basic Forms</a></li>
+                                  <li><a href="#">Multi-select</a></li>
+                                  <li><a href="#">Input Groups</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-6 no-padding">
+                              <ul>
+                                  <li class="dropdown-header"><i class="fa fa-gear"></i>Extras</li>
+                                  <li><a href="#">DateRange Picker</a></li>
+                                  <li><a href="#">Calendar</a></li>
+                                  <li><a href="#">Spinners</a></li>
+                                  <li><a href="#">Charts</a></li>
+                                  <li><a href="#">Maps</a></li>
+                                  <li><a href="#">Advanced Controls</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+
+
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="website/gallery/web-app.html">Web App Example</a></li>
+                          <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
+                          <li><a href="website/gallery/fap.html">FAP Example</a></li>
+                          <li><a href="website/gallery/eras-dws-web.html">MyERAS Example</a></li>
+
+                      </ul>
+                  </li>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Samples <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="website/gallery/web-app.html">Web App Example</a></li>                
-              </ul>
-            </li>
-            <li><a href="#">Layouts</a></li>
-            
-          </ul>
+              <ul class="nav navbar-nav not-nav ng-scope"></ul>
+              <aamc-account class="ng-scope">
+                  <style>
+                      #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
+                          margin-right: 10px;
+                      }
+                  </style>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                          <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Stephanie Z.</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+                          <!-- ngIf: !isAuthenticated() -->
+                          <ul class="dropdown-menu" role="menu">
+                              <!-- ngIf: isAuthenticated() -->
+                              <li ng-if="isAuthenticated()" class="ng-scope">
+                                  <!--<a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>-->
+                                  <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="fa fa-user"></i> My Account</a>
+                              </li><!-- end ngIf: isAuthenticated() -->
+                              <li><a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="#" class=""><i class="fa fa-user"></i>  Help</li>
+                              <!-- ngIf: isAuthenticated() -->
+                              <li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
+
+                              <li>
+                                  <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
+                                  <!-- ngIf: !isAuthenticated() -->
+                              </li>
+                          </ul>
+                      </li>
+                  </ul></aamc-account>
           </div><!--/.nav-collapse animate-collapse -->
-        </div>
       </div>
-      
+  </div>
+
       <div class="container">
         <h1>Styles</h1>
         <div class="panel panel-default box-shadow" style="padding:0px;">
@@ -155,7 +246,7 @@
         </li>
       </ul>
     </footer>
-    
+  </div>
     <script src="vendor/jquery/dist/jquery.js"></script>
     <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
   </body>

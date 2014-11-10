@@ -7,81 +7,17 @@
 /**
 * Import of the aamc-styles.
 */
-// Core variables and mixins  
-  @import "variables.less";
-  @import "themes/purple.less"; 
-  @import "components/wizard/wizard.less";
-
-  
-  .box-shadow { -webkit-box-shadow: 1px 2px 4px #ccc; -moz-box-shadow: 1px 2px 4px #ccc; box-shadow: 1px 2px 4px #616161; }  
-  .navbar{
-    .box-shadow;
-    .navbar-nav { 
-      padding-left: 110px;
-      @media (max-width:  @grid-float-breakpoint) {
-        padding-left: 0px;     
-      }
-    }
-    .navbar-nav > li > a {
-      padding-top: (@navbar-height/2) + 7;
-      @media (max-width: @grid-float-breakpoint) {
-        padding: 5px 5px 5px 5px;
-      }
-    } 
-    .nav-items { height: 100%; }   
-    .navbar-brand { padding-left: 40px; }
-    .nav .open { 
-      -webkit-box-shadow: 0px 3px 3px darken(@navbar-primary, 40%); 
-      -moz-box-shadow: 0px 3px 3px darken(@navbar-primary, 40%); 
-      box-shadow: 0px 3px 3px darken(@navbar-primary, 40%); 
-    }
-  }
-  .info-background { 
-    background-color: @primary-color-lighter; 
-    color: @primary-color-darker; 
-  }
-
-  .footer {
-    border-left: 1px solid #8ca1a1;
-    border-top: solid silver 1px;
-    li {
-      padding-left:  7px;
-      margin-bottom: 10px;
-      margin-left: 7px;
-      padding-top: 5px;
-      vertical-align: middle;
-    }
-    ul li { 
-      padding-left: 5px; 
-      padding-right: 5px; }
-    li.noborder { 
-      border: none; 
-    }
-  }
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+@import "themes/purpleconfig.less";
+@import "components/responsive/responsive.less";
+@import "components/wizard/wizard.less";
+@import "components/dropdown-menu/dropdown-menu.less";
+@import "components/navbar/navbar.less";
+@import "components/general/general.less";
+@import "components/tiles/tiles.less";
+@import "components/alerts/alerts.less";
 
 
-  html,
-  body { height: 100%; }
-
-
-  .wrapper {
-    height: auto;
-    margin: 0 auto -20px;
-    min-height: 98%;
-    padding: 0 0 20px;
-  }
-
-  .landing-page-panel-body{
-    min-height: 157px;
-    @media (max-width: @grid-float-breakpoint) {
-        min-height: 0px;
-      }
-  }
-
-  #landing-page-img{
-    width:747px;
-  }
-
-
-  
 
