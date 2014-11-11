@@ -107,28 +107,23 @@
                     </ul>
                 </li>
 
-
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="website/gallery/web-app.html">Web App Example</a></li>
                         <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
                         <li><a href="website/gallery/fap.html">FAP Example</a></li>
-                        <li><a href="website/gallery/eras-dws-web.html">MyERAS Example</a></li>
-
+                        <li><a href="website/gallery/myeras-licensure.html">MyERAS Example</a></li>
+                        <li><a href="website/gallery/eras-dws-web.html">DWS Example</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav not-nav ng-scope"></ul>
             <aamc-account class="ng-scope">
-                <style>
-                    #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
-                        margin-right: 10px;
-                    }
-                </style>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Kiran Devarakonda</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
+                        <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Stephanie Z.</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
                         <!-- ngIf: !isAuthenticated() -->
                         <ul class="dropdown-menu" role="menu">
                             <!-- ngIf: isAuthenticated() -->
@@ -178,76 +173,103 @@
         </div>
         <strong>Alert!</strong> You currently have MCAT scores on Hold. Please contact the AAMC Services Contact Center at <a href="mailto:mcat@aamc.org">mcat@aamc.org</a> or <a href="#">202-828-0690</a> for assistance.
     </div>
-
-    <div class="row ng-scope">
-        <div class="col-xs-12 col-md-12">
-            <div class="panel panel-dashboard">
-                <!--<div class="panel-heading">
-                    <span class="h1"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</span>
-                </div>-->
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <span class="h3"><span class="glyphicon glyphicon-home"></span> Applicant Summary</span>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong class="">Total number of Students</strong><span class="list-padding"> - 130</span></li>
-                                    <li class="list-group-item"><strong>Registered</strong><span class="list-padding"> - 110</span></li>
-                                    <li class="list-group-item"><strong class="">Tokens</strong><span class="list-padding"> - 112</span></li>
-                                    <li class="list-group-item"><strong>Applicant Stat</strong><span class="list-padding"> - 90</span></li>
-                
-                                </ul>
-                            </div>
+             <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="fd-tile detail clean tile-purple">
+                        <div class="content col-md-11">
+                            <h2 class="text-left">Applicant Summary</h2>
+                            <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                <dt>Total # of Students</dt>
+                                <dd>-130<!--{{examinee.aamcId}}--></dd>
+                            </dl>
+                            <br><br>
+                            <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                <dt>Registered</dt>
+                                <dd>-110<!--{{examinee.aamcId}}--></dd>
+                            </dl>
+                            <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                <dt>Tokens</dt>
+                                <dd>-112<!--{{examinee.aamcId}}--></dd>
+                            </dl>
+                            <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                <dt>Applicant Stats</dt>
+                                <dd>-90<!--{{examinee.aamcId}}--></dd>
+                            </dl>
+                            <!-- <button class="btn btn-info btn-rad pull-right"><i class="fa fa-upload fa-fw"></i> Upload Documents</button>-->
                         </div>
-                        <div class="col-xs-6 col-md-6">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">
-                                    <span class="h3"><span class="glyphicon glyphicon-tasks"></span> ERAS Notices</span>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong>Subject</strong><span class="list-padding"> Deleted</span></li>
-                                    <li class="list-group-item"><strong>Received</strong><span class="list-padding"><a href="#"> View Details</a></span></li>
-                                    <li class="list-group-item"><strong>File</strong><span class="list-padding"><a href="#"> View Details</a></span></li>
-                
-                                </ul>
+                        <div class="icon"><i class="fa fa-user"></i></div>
+                        <a class="details" href="#">report a problem<span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
+                    </div>
+                </div>
+
+                 <div class="col-md-6 col-sm-6">
+                     <div class="fd-tile detail clean tile-prusia">
+                         <div class="content col-md-11">
+                             <h2 class="text-left">ERAS Notices</h2>
+                             <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                 <dt>Subject</dt>
+                                 <dd>Deleted</dd>
+                             </dl>
+                             <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                 <dt>Received</dt>
+                                 <dd><a href="#">View Details</a></dd>
+                             </dl>
+                             <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                 <dt>File</dt>
+                                 <dd><a href="#">View Details</a></dd>
+                             </dl>
+                             <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                 <dt>Other</dt>
+                                 <dd><a href="#">View Details</a></dd>
+                             </dl>
+
+                         </div>
+                           <div class="icon"><i class="fa fa-pencil-square-o"></i></div>
+                         <a class="details" href="#">View All Notices <span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
+                     </div>
+                 </div>
+             </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fd-tile detail clean tile-red">
+                            <div class="content col-md-11">
+                                <h2 class="text-left">Quick Links</h2>
+                                <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                    <dt>Reports</dt>
+                                    <dd><a href="#">View Recent</a></dd>
+                                </dl>
+                                <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                    <dt>Filters</dt>
+                                    <dd><a href="#">Add/Edit</a></dd>
+                                </dl>
+                                <!-- <button class="btn btn-info btn-rad pull-right"><i class="fa fa-upload fa-fw"></i> Upload Documents</button>-->
                             </div>
+
+                            <div class="icon"><i class="fa fa-link"></i></div>
+                            <a class="details" href="#">Manage Users<span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <span class="h3"><span class="glyphicon glyphicon-link"></span> Static Links</span>
-                                </div>
-                                <ul class="list-group text-left">
-                                    <li class="list-group-item"><a href="#">Reports</a></li>
-                                    <li class="list-group-item"><a href="#">Filters</a></li>
-                
-                                </ul>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fd-tile detail clean tile-green">
+                            <div class="content col-md-11">
+                                <h2 class="text-left">Documents</h2>
+
+                                <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                    <dt>Number of LORs</dt>
+                                    <dd><a href="#">54</a></dd>
+                                </dl>
+                                <dl class="dl-horizontal col-md-8 col-sm-4 col-md-offset-1">
+                                    <dt>Number Missing LORs</dt>
+                                    <dd><a href="#">44</a></dd>
+                                </dl>
+
                             </div>
-                        </div>
-                        <div class="col-xs-6 col-md-6">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">
-                                    <span class="h3"><span class="glyphicon glyphicon-file"></span> Documents</span>
-                                </div>
-                                <ul class="list-group text-center">
-                                    <li class="list-group-item"><strong>Number of LORs</strong><span class="list-padding"><a href="#"> View Scores</a></span></li>
-                                    <li class="list-group-item"><strong>Number of Missing LORs</strong><span class="list-padding"><a href="#"> View Scores</a></span></li>
-                
-                                </ul>
-                            </div>
+
+                            <div class="icon"><i class="fa fa-file-text"></i></div>
+                            <a class="details" href="#">View all Documents<span><i class="fa fa-arrow-circle-right pull-right"></i></span></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-</ui-view>
-        </main>
 
         <div class="footer ">
             <div class="container-fluid">

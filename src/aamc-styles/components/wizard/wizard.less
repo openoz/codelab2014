@@ -101,7 +101,7 @@
 
           &:hover {
             background: #f3f4f5;
-            color: @brand-success;
+            color: @primary-color;
             cursor: default;
 
             .chevron:before {
@@ -147,35 +147,33 @@
       }
 
       &.complete {
-        background: #f3f4f5;
-        color: @brand-success;
+        background: @brand-primary;
+        color: #FFF;
 
         &:hover {
-          background: #e7eff8;
+          background: @dark-purple;
           cursor: pointer;
 
           .chevron:before {
-            border-left: 14px solid #e7eff8;
+            border-left: 14px solid @dark-purple;
           }
         }
 
         .chevron:before {
-          border-left: 14px solid #f3f4f5;
+          border-left: 14px solid @primary-color;
         }
       }
       &.active {
-        background: @primary-color;
+        background: @primary-color-lighter;
         color: white;
         cursor: default;
-        border-bottom: solid @primary-color 2px;
+        border-bottom: solid @primary-color-lighter 2px;
 
         .chevron{
-          border-left: 14px solid @primary-color;
+          border-left: 14px solid @primary-color-lighter;
         }
         .chevron:before {
-
-          border-left: 14px solid @primary-color;
-
+          border-left: 14px solid @primary-color-lighter;
         }
 
         .badge {
