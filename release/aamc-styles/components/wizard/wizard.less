@@ -52,6 +52,20 @@
 }
 .wizard ul li:first-child {
   border-radius: 0;
+  @media (min-width: 320px) and (max-width: 1024px)  {
+    /*display: inline-block;*/
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-bottom-left-radius: 0;
+    -moz-border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+.wizard ul li:last-child {
+  @media (min-width: 320px) and (max-width: 1024px) {
+    border-bottom: 0;
+  }
 }
 .wizard ul li {
   font-size: 15px;
@@ -65,7 +79,10 @@
   padding: 0 20px 0 30px;
   position: relative;
   @media (min-width: 320px) and (max-width: 1024px)  {
-    display: inline-block;
+    /*display: inline-block;*/
+    float: none;
+    padding-left: 20px;
+    border-bottom: 1px solid #d4d4d4;
   }
 }
 .fuelux [class^="icon-"], .fuelux [class*=" icon-"] {
@@ -101,7 +118,7 @@
 
           &:hover {
             background: #f3f4f5;
-            color: @brand-success;
+            color: @primary-color;
             cursor: default;
 
             .chevron:before {
@@ -147,35 +164,33 @@
       }
 
       &.complete {
-        background: #f3f4f5;
-        color: @brand-success;
+        background: @brand-primary;
+        color: #FFF;
 
         &:hover {
-          background: #e7eff8;
+          background: @dark-purple;
           cursor: pointer;
 
           .chevron:before {
-            border-left: 14px solid #e7eff8;
+            border-left: 14px solid @dark-purple;
           }
         }
 
         .chevron:before {
-          border-left: 14px solid #f3f4f5;
+          border-left: 14px solid @primary-color;
         }
       }
       &.active {
-        background: @primary-color;
+        background: @primary-color-lighter;
         color: white;
         cursor: default;
-        border-bottom: solid @primary-color 2px;
+        border-bottom: solid @primary-color-lighter 2px;
 
         .chevron{
-          border-left: 14px solid @primary-color;
+          border-left: 14px solid @primary-color-lighter;
         }
         .chevron:before {
-
-          border-left: 14px solid @primary-color;
-
+          border-left: 14px solid @primary-color-lighter;
         }
 
         .badge {
@@ -281,36 +296,9 @@
   }
 }
 
-
-/*ADD FOLLOWING RESPONSIVE STYLES FOR FAP
-@media (max-width: 767px) {
-  .wizard-row .fuelux {
-    position: static;
-  }
-  .wizard-row {
-    margin-left: -60px;
-  }
-  .cl-mcont {
-    margin-left: 0px;
-  }
-}*/
-
 @media (max-width: 767px) {
   .wizard-row .fuelux {
     position: static;
   }
 }
-/*
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-  .block-wizard .step-content {
-    width: 20%;
-    padding: 0px;
-  }
-  .fuelux .wizard ul li {
-    display: inline-block;
-  }
-  .fuelux .wizard ul li:first-child {
-    position: fixed;
-  }*/
+
