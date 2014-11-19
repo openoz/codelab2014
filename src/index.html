@@ -1,256 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>AAMC UI|UX Styles</title>
+<html ng-app="codelab" ng-controller="AppCtrl">
+<head>
+    <title ng-bind="pageTitle"></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
 
-    <base href="http://localhost:8888/" >
-    <link rel="stylesheet" type="text/css" href=".tmp/aamc-styles.css">    
-    
-  </head>
-  <body>
-  <div id="wrapper">
-  <div id="head-nav" class="topbar navbar navbar-default">
-      <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <div class="navbar-left">
-                  <a class="navbar-brand" href="https://www.aamc.org"><img class="img-responsive" src="https://static.aamc.org/content/images/aamcLogoSmWht.png"></a>
-              </div>
-          </div>
-          <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                  <li class="active"><a href="/">Main</a></li>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                          <li><a href="website/guidelines/usability.html">Usability</a></li>
-                          <li><a href="website/guidelines/responsive.html">Responsiveness</a></li>
-                          <li><a href="website/guidelines/accessibility.html">Accessibility</a></li>
-                      </ul>
-                  </li>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layouts<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">Grid</a></li>
-                          <li><a href="#">Tiles</a></li>
-                          <li class="dropdown-submenu"><a href="#">Templates</a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Content</a></li>
-                                  <li><a href="#">Application</a></li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">Buttons</a></li>
-                          <li><a href="#">Modals & Alerts</a></li>
-                          <li><a href="#">Tabs & Accordions</a></li>
-                          <li><a href="#">Lists & Trees</a></li>
-                          <li class="dropdown-submenu"><a href="#">Typography</a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Fonts</a></li>
-                                  <li><a href="#">Icons</a></li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </li>
+    <link rel="stylesheet" type="text/css" href=".tmp/codelab-styles.css">
+</head>
 
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components<b class="caret"></b></a>
-                      <ul class="dropdown-menu col-menu-2">
-                          <li class="col-sm-6 no-padding">
-                              <ul>
-                                  <li class="dropdown-header"><i class="fa fa-bar-chart-o"></i>Tables</li>
-                                  <li><a href="#">Basic Tables</a></li>
-                                  <li><a href="#">Data Tables</a></li>
-                                  <li><a href="#">CSS3 Data Grids</a></li>
-                                  <li class="dropdown-header"><i class="fa fa-legal"></i>Forms</li>
-                                  <li><a href="#">Basic Forms</a></li>
-                                  <li><a href="#">Multi-select</a></li>
-                                  <li><a href="#">Input Groups</a></li>
-                              </ul>
-                          </li>
-                          <li class="col-sm-6 no-padding">
-                              <ul>
-                                  <li class="dropdown-header"><i class="fa fa-gear"></i>Extras</li>
-                                  <li><a href="#">DateRange Picker</a></li>
-                                  <li><a href="#">Calendar</a></li>
-                                  <li><a href="#">Spinners</a></li>
-                                  <li><a href="#">Charts</a></li>
-                                  <li><a href="#">Maps</a></li>
-                                  <li><a href="#">Advanced Controls</a></li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </li>
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div ng-include="'app/partials/nav-header.tpl.html'"></div>
 
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                          <li><a href="website/gallery/web-app.html">Web App Example</a></li>
-                          <li><a href="website/gallery/mcat.html">MCAT Example</a></li>
-                          <li><a href="website/gallery/fap.html">FAP Example</a></li>
-                          <li><a href="website/gallery/myeras-licensure.html">MyERAS Example</a></li>
-                          <li><a href="website/gallery/eras-dws-web.html">DWS Example</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <ul class="nav navbar-nav not-nav ng-scope"></ul>
-              <aamc-account class="ng-scope">
-                  <style>
-                      #myaccount-link .glyphicon-user, #logout-link .glyphicon-log-out, #login-link .glyphicon-log-in {
-                          margin-right: 10px;
-                      }
-                  </style>
-                  <ul class="nav navbar-nav navbar-right">
-                      <li class="dropdown">
-                          <!-- ngIf: isAuthenticated() --><a ng-if="isAuthenticated()" href="#" class="dropdown-toggle ng-scope" data-toggle="dropdown"><span class="ng-binding">Stephanie Z.</span> <b class="caret"></b></a><!-- end ngIf: isAuthenticated() -->
-                          <!-- ngIf: !isAuthenticated() -->
-                          <ul class="dropdown-menu" role="menu">
-                              <!-- ngIf: isAuthenticated() -->
-                              <li ng-if="isAuthenticated()" class="ng-scope">
-                                  <!--<a id="myaccount-link" ng-hide="!isAccountManagerModal()" ng-click="showAccountManager()" class="ng-hide"><i class="glyphicon glyphicon-user"></i> MY ACCOUNT</a>-->
-                                  <a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" class=""><i class="fa fa-user"></i> My Account</a>
-                              </li><!-- end ngIf: isAuthenticated() -->
-                              <li><a id="myaccount-link" ng-show="isAuthenticated() &amp;&amp; !isAccountManagerModal()" ng-href="https://apps.development.aamc.org/30/ssoLogin/home/accountmanagement/accountManagementPortal" target="_blank" href="#" class=""><i class="fa fa-user"></i>  Help</li>
-                              <!-- ngIf: isAuthenticated() -->
-                              <li aamc-secure="" class="divider ng-scope" ng-if="isAuthenticated()"></li><!-- end ngIf: isAuthenticated() -->
-
-                              <li>
-                                  <!-- ngIf: isAuthenticated() --><a id="logout-link" ng-if="isAuthenticated()" ng-click="logout()" href="#" class="ng-scope"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a><!-- end ngIf: isAuthenticated() -->
-                                  <!-- ngIf: !isAuthenticated() -->
-                              </li>
-                          </ul>
-                      </li>
-                  </ul></aamc-account>
-          </div><!--/.nav-collapse animate-collapse -->
-      </div>
-  </div>
-
-      <div class="container">
-        <h1>Styles</h1>
-        <div class="panel panel-default box-shadow" style="padding:0px;">
-          
-          <div class="row">
-            <div class="col-lg-8">
-              <img id="landing-page-img" class="img-responsive " src="http://material-design.storage.googleapis.com/images/layout-principles-responsive-responsive-01_large_mdpi.png"/>
-            </div>            
-            <div class="col-lg-3  visible-lg" >
-              <div style="padding:20px;padding-left:1px;">
-                
-                  <h1 class="text-primary-darker">h1 - AAMC</h1>
-                  <h1 class="text-accent-darker">h1 - Styles</h1>
-                  <h2 class="text-muted">h2 - Styles</h2>
-                  <h3 class="text-accent">h3 - Styles</h3>
-                  <h4>h4 - Styles</h4>
-                  <h5 class="text-primary">h5 - Styles</h5>
-                  <h6>h6 - Styles</h6>
-                
-              </div>
-            </div>
-          
-          </div>
+        <div class="container">
+            <div class="container" ui-view="main"></div>
         </div>
-                
+        <br/>
+    </div>
 
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="panel panel-default" >
-              <div class="panel-body" >
-                <div class="landing-page-panel-body" >
-                  <h3>Guidelines</h3>
-                  <small>
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                  </p>
-                  </small>
-                  <ul class="list-unstyled">
-                    <li><a href="website/guidelines/responsive.html">Responsive Design</a></li>
-                    <li><a>Accessibility</a></li>
-                  </ul>
-                  
-                </div>
-                <hr/>
-                <a class="pull-right" >More ></a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-default" >
-              <div class="panel-body">
-                <div class="landing-page-panel-body">
-                  <h3>Samples</h3>
-                  <small>
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  </p>
-                  </small>
-                  
-                  <ul class="list-unstyled">
-                    <li ><a href="website/gallery/web-app.html">Web App Example</a></li>                    
-                  </ul>
-                </div>
-                <hr/>
-                <a class="pull-right">More ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-default" >
-              <div class="panel-body">
-                <div class="landing-page-panel-body">
-                  <h3>Layouts</h3>
-                  <small>
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-                  </p>
-                  </small>
-                  <ul class="list-unstyled">
-                    <li><a>Feature Landing Page</a></li>
-                    <li><a>Two Column Layout</a></li>
-                    <li><a>Side Menu Layout</a></li>
-                  </ul>
-                </div>
-                <hr/>
-                <a class="pull-right">More ></a>
-              </div>
-            </div>
+    <div class="panel panel-footer">
+        <footer class="footer footer-shadow hidden-xs">
+            <ul class="list-inline text-center hidden-sm hidden-xs">
+                <li>
+                    &copy; 2014 <a href="http://www.openosmium.com">OpenOsmium</a>.
+                </li>
 
-          </div>
-        </div>
-      </div>
-      <footer class="footer footer-shadow hidden-xs xyzz">
-        <ul class="list-inline text-center hidden-sm hidden-xs">
-          <li class="noborder">655 K Street, NW, Suite 100, Washington, DC, 20001-2399</li><li>
-          <a alt="Contact Us" href="https://www.aamc.org/about/contact/" title="Contact Us">Contact Us</a>
-        </li>
-        <li>
-          <a alt="Follow Us" href="https://www.aamc.org/about/follow/" title="Follow Us">Follow Us</a>
-        </li>
-        <li>© 1995 - 2014 AAMC</li>
-        <li>
-          <a alt="Terms and Conditions" href="https://www.aamc.org/44864/terms.html" title="Terms and Conditions">Terms and Conditions</a>
-        </li>
-        <li>
-          <a alt="Privacy Statement" href="https://www.aamc.org/44866/privacy.html" title="Privacy Statement">Privacy Statement</a>
-        </li>
-      </ul>
-    </footer>
-  </div>
-    <script src="vendor/jquery/dist/jquery.js"></script>
-    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
-  <a class="back-to-top" href="#" style="display: inline;">
-      <i class="fa fa-angle-up"></i>
-  </a>
+                <li>AngularJS codelab is based on
+                    <a href="http://www.angularjs.org">AngularJS</a>,
+                    <a href="http://getbootstrap.com">Bootstrap</a>,
+                    <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
+                    and
+                    <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
+                </li>
+            </ul>
 
-  </body>
+            <!--<ul class="list-inline text-center hidden-sm hidden-xs">
+                <li>&copy; 2014 OpenOsmium</li>
+                <li class="noborder"></li>
+                <li>
+                    <a alt="Contact Us" href="http://www.openosmium.com" title="Contact Us" target="_blank">Contact Us</a>
+                </li>
+            </ul>-->
+        </footer>
+    </div>
+</div>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/home/home.js"></script>
+<script type="text/javascript" src="app/about/about.js"></script>
+
+<a class="back-to-top" href="#" style="display: inline;">
+    <i class="fa fa-angle-up"></i>
+</a>
+
+</body>
+
 </html>

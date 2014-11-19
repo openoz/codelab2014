@@ -1,6 +1,26 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   var config;
-  
+
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-conventional-changelog');
+  grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-coffeelint');
+  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-ngmin');
+  grunt.loadNpmTasks('grunt-html2js');
+
+  /**
+   * Load in our build configuration file.
+   */
+  var userConfig = require('./build.config.js');
+
   require('load-grunt-tasks')(grunt);
 
   config = {
@@ -10,7 +30,7 @@ module.exports = function(grunt) {
       release: 'release',
       build: 'bin',
       bower_components: 'src/vendor',
-      main_style: 'aamc-styles',
+      main_style: 'codelab-styles',
       scripts: {
         jQuery: 'jquery/dist/jquery.min.js',
         bootstrap_js: 'bootstrap/dist/js/bootstrap.min.js'
@@ -46,52 +66,57 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= paths.src %>/',
-          src: 'aamc-styles.less',
+          src: 'codelab-styles.less',
           dest: '<%= paths.build %>/',
           ext: '.css'
           //rename: function(src, dest) {return dest;}
         }]
       },
       compile: {
-                options: {
-                    optimization: 2,
-                    modifyVars: {
-                      "bower_components_path": '"vendor"',
-                      "icon-font-path": '"fonts/"',
-                      "fa-font-path": '"fonts"'
-                    }
-                },
-                files: {
-                    'src/.tmp/aamc-styles.css': 'src/aamc-styles.less'
-                },
-            }
-    },
-    copy: {
-      html: {
         options: {
-          process: function(content, srcpath) {            
-            return content.replace(/href="\//g, 'href="/aamc-styles/').replace("http://localhost:8888/", "https://apps.development.aamc.org/aamc-styles/");
+          optimization: 2,
+          modifyVars: {
+            "bower_components_path": '"vendor"',
+            "icon-font-path": '"fonts/"',
+            "fa-font-path": '"fonts"'
           }
         },
+        files: {
+          'src/.tmp/codelab-styles.css': 'src/codelab-styles.less'
+        }
+      }
+    },
+    copy: {
+      build_appjs: {
+        files: [
+          {
+            src: ['**/*.js'],
+            dest: '<%= paths.build %>/',
+            cwd: '.',
+            expand: true
+          }
+        ]
+      },
+      html: {
         expand: true,
         cwd: '<%= paths.src %>/',
         src: ['**/*.html'],
         dest: '<%= paths.build %>/',
         filter: 'isFile'
       },
-      vendor: {        
-          cwd: '<%= paths.src %>/vendor/',
-          src: '**/*',
-          dest: '<%= paths.build %>/vendor',
-          expand: true        
+      vendor: {
+        cwd: '<%= paths.src %>/vendor/',
+        src: '**/*',
+        dest: '<%= paths.build %>/vendor',
+        expand: true
       },
-      css:{
+      css: {
         expand: true,
         cwd: '<%= paths.src %>/.tmp',
         src: ['**/*.css'],
         dest: '<%= paths.build %>/.tmp'
       },
-      fonts_dev:{
+      fonts_dev: {
         expand: true,
         src: ['<%= paths.bower_components %>/bootstrap/fonts/*', '<%= paths.bower_components%>/font-awesome/fonts/*'],
         flatten: true,
@@ -136,7 +161,7 @@ module.exports = function(grunt) {
   //
   grunt.initConfig(config);
   grunt.registerTask('default', ['connect:dev', 'watch']);
-  grunt.registerTask('build', ['copy:html', 'less:compile', 'copy:css','copy:fonts_dev', 'copy:fonts_build', 'copy:vendor', 'copy:less_release']);
+  grunt.registerTask('build', ['copy:html', 'less:compile', 'copy:css', 'copy:fonts_dev', 'copy:build_appjs', 'copy:fonts_build', 'copy:vendor', 'copy:less_release']);
   grunt.registerTask('serve', ['build', 'connect:dev', 'watch']);
   grunt.registerTask('release', ['copy:less_release']);
 };
