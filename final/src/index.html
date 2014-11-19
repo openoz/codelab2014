@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="codelab" ng-controller="AppCtrl">
+<head>
+    <title ng-bind="pageTitle"></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+
+    <link rel="stylesheet" type="text/css" href=".tmp/codelab-styles.css">
+</head>
+
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div ng-include="'app/partials/nav-header.tpl.html'"></div>
+
+        <div class="container">
+            <div class="container" ui-view="main"></div>
+        </div>
+        <br/>
+    </div>
+
+    <div ng-include="'app/partials/footer.tpl.html'"></div>
+</div>
+
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/home/home.js"></script>
+<script type="text/javascript" src="app/about/about.js"></script>
+
+<a class="back-to-top" href="#" style="display: inline;">
+    <i class="fa fa-angle-up"></i>
+</a>
+
+</body>
+
+</html>
