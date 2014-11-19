@@ -11,15 +11,25 @@ angular.module( 'codelab.about', [
         templateUrl: 'app/about/about.tpl.html'
       }
     },
-    data:{ pageTitle: 'What is It?' }
+    data:{ pageTitle: 'Contact Us' }
   });
 })
 
 .controller( 'AboutCtrl', function AboutCtrl( $scope ) {
-  // This is simple a demo for UI Boostrap.
-  $scope.dropdownDemoItems = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
+  $scope.user = {};
+  $scope.formSubmitted = false;
+
+  $scope.phoneNumbers = [{'inputLabel':'dayPhone', 'displayLabel': 'Day Phone', 'data' : null },
+    {'inputLabel':'ePhone', 'displayLabel': 'Evening Phone', 'data' : null },
+    {'inputLabel':'fax', 'displayLabel': 'Fax', 'data' : null }];
+
+  $scope.submitForm = function(contactForm){
+    if(contactForm.$valid) {
+      $scope.review = true;
+    }
+  };
+
+  $scope.finallySubmit = function() {
+    $scope.formSubmitted = true;
+  }
 });
