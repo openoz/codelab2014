@@ -11,7 +11,7 @@ angular.module( 'codelab.about', [
         templateUrl: 'app/about/about.tpl.html'
       }
     },
-    data:{ pageTitle: 'Contact Us' }
+    data:{ pageTitle: 'About Us' }
   });
 })
 
