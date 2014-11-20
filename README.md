@@ -1,5 +1,5 @@
 Codelab-2014
-===========
+============
 
 Google AngularJS Codelab for DevFest 2014
 ***
@@ -26,6 +26,7 @@ Build an website for a company which contains its homepage and a "About Us" page
 - Creating the About Us view and its controller
 - Forms and form validations
 - Services
+- REST Services
 
 ## Things for people to explore
 - Grunt build system

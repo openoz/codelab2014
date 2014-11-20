@@ -1,8 +1,11 @@
 angular.module('codelab', [
     'codelab.dataservice',
+    'codelab.opendataService',
     'codelab.home',
     'codelab.about',
-    'ui.router'
+    'codelab.errorModal',
+    'ui.router',
+    'ngResource'
 ])
 
     .config(function myAppConfig($stateProvider, $urlRouterProvider) {

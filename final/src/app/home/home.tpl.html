@@ -1,23 +1,40 @@
 <div class="">
-  <h1>AngularJS Beginners Codelab</h1>
+  <div class="container">
+    <h1>AngularJS Beginners Codelab</h1>
 
-  <p class="lead">
-    AngularJS codelab for beginners with focus on the best practices and quick ramp-up of AngularJS applications based on the
-    <a href="http://joshdmiller.github.io/ng-boilerplate/#/home" target="_blank">ngBoilerplate</a> kickstart project.
-  </p>
+    <p class="lead">
+      AngularJS codelab for beginners with focus on the best practices and quick ramp-up of AngularJS applications based on the
+      <a href="http://joshdmiller.github.io/ng-boilerplate/#/home" target="_blank">ngBoilerplate</a> kickstart project.
+    </p>
+
+    <div ng-if="user">
+      <h1>That's pretty much it for this Codelab {{user.fName}} {{user.lName}}</h1>
+
+      <p class="lead">Hope you had a good time</p>
+    </div>
 
 
-  <div ng-if="user">
-    <h1>That's pretty much it for this Codelab {{user.fName}} {{user.lName}}</h1>
-
-    <p class="lead">Hope you had a good time</p>
+    <div class="btn-group" ng-click="loadData()">
+      <a href="" class="btn btn-large btn-primary">
+        <i class="fa fa-forward"></i>
+        Continue
+      </a>
+    </div>
   </div>
-
-
-  <div class="btn-group">
-    <a href ui-sref="explorer" class="btn btn-large btn-primary">
-      <i class="fa fa-forward"></i>
-      Continue
-    </a>
+  <br />
+  <div class="container">
+    <div class="panel panel-info" ng-repeat="result in searchResult">
+      <div class="panel-heading">
+        {{result.name}}
+      </div>
+      <div class="panel-body">
+        <strong>Description:</strong> {{result.description}}<br/>
+        <strong>Author:</strong> {{result.tableAuthor.displayName}}<br/>
+        <strong>Role:</strong> {{result.tableAuthor.roleName}}
+      </div>
+    </div>
   </div>
 </div>
+
+<div error-modal></div>
+

@@ -37,6 +37,18 @@ angular.module( 'codelab.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope, dataService ) {
+.controller( 'HomeCtrl', function HomeController( $scope, dataService, OpenDataService) {
       $scope.user = dataService.getUser();
+
+        $scope.loadData = function () {
+            var deferredOpenDataPromise = OpenDataService.openData.getData();
+
+            deferredOpenDataPromise.then(function (opendata) {
+                $scope.searchResult = opendata;
+            }, function (failureReason) {
+                var element = angular.element('#errorModal');
+                $scope.errorMessage = failureReason;
+                element.modal('show');
+            });
+        };
     });
