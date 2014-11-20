@@ -1,5 +1,5 @@
 angular.module( 'codelab.about', [
-  'ui.router',
+  'ui.router'
 ])
 
 .config(function config( $stateProvider ) {
@@ -15,11 +15,11 @@ angular.module( 'codelab.about', [
   });
 })
 
-.controller( 'AboutCtrl', function AboutCtrl( $scope ) {
+.controller( 'AboutCtrl', function AboutCtrl( $scope, $location, dataService ) {
   $scope.user = {};
   $scope.formSubmitted = false;
 
-  $scope.phoneNumbers = [{'inputLabel':'dayPhone', 'displayLabel': 'Day Phone', 'data' : null },
+  $scope.user.phoneNumbers = [{'inputLabel':'dayPhone', 'displayLabel': 'Day Phone', 'data' : null },
     {'inputLabel':'ePhone', 'displayLabel': 'Evening Phone', 'data' : null },
     {'inputLabel':'fax', 'displayLabel': 'Fax', 'data' : null }];
 
@@ -31,5 +31,7 @@ angular.module( 'codelab.about', [
 
   $scope.finallySubmit = function() {
     $scope.formSubmitted = true;
+    dataService.setUser($scope.user);
+    $location.path('home');
   }
 });

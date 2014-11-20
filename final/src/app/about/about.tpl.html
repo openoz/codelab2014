@@ -42,17 +42,31 @@
               </div>
             </div>
 
-            <div class="form-group row" ng-repeat="phone in phoneNumbers">
+            <div class="form-group row" ng-repeat="phone in user.phoneNumbers">
               <div class="col-lg-3">
                 {{phone.displayLabel}}:
               </div>
               <div class="col-lg-9">
-                <input type="text" name="{{phone.inputLabel}}" ng-model="phone.data" minlength=10 maxlength=20 ng-pattern="phonePattern" required>
+                <input type="text" name="{{phone.inputLabel}}"
+                       ng-model="phone.data" minlength=10 maxlength=20 ng-pattern="phonePattern"
+                       placeholder="Enter valid {{phone.displayLabel}}" required>
                 <span class="text-danger" ng-show="!phone.data || phone.data.length==0">This is a required field.</span>
               </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="form-group row">
+              <div class="col-lg-3">
+                Message:
+              </div>
+              <div class="col-lg-9">
+                <textarea type="t" name="message" ng-model="user.message"
+                          maxlength=250 cols="23" rows="5"
+                          placeholder="Enter message" required></textarea>
+                <span class="text-danger" ng-show="!user.message || user.message.length==0">This is a required field.</span>
+              </div>
+            </div>
+
+            <div>
               <button class="btn btn-primary" type="submit">Submit</button>
             </div>
           </form>
@@ -76,8 +90,11 @@
           <div class="row">
             Last Name: {{user.fName}}
           </div>
-          <div class="row" ng-repeat="phone in phoneNumbers">
+          <div class="row" ng-repeat="phone in user.phoneNumbers">
             {{phone.displayLabel}}: {{phone.data}}
+          </div>
+          <div class="row">
+            Message: {{user.message}}
           </div>
 
           <button type="submit" class="btn btn-primary" ng-click="finallySubmit()">Submit</button>

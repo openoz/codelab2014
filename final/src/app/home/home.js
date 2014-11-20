@@ -13,7 +13,7 @@
  * specified, as shown below.
  */
 angular.module( 'codelab.home', [
-  'ui.router',
+  'ui.router'
 ])
 
 /**
@@ -37,8 +37,6 @@ angular.module( 'codelab.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-      $scope.checkUsername = function() {
-        alert($scope.username);
-      };
+.controller( 'HomeCtrl', function HomeController( $scope, dataService ) {
+      $scope.user = dataService.getUser();
     });

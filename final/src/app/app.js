@@ -1,4 +1,5 @@
 angular.module('codelab', [
+    'codelab.dataservice',
     'codelab.home',
     'codelab.about',
     'ui.router'
