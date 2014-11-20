@@ -4,8 +4,7 @@ angular.module('codelab', [
     'codelab.home',
     'codelab.about',
     'codelab.errorModal',
-    'ui.router',
-    'ngResource'
+    'ui.router'
 ])
 
     .config(function myAppConfig($stateProvider, $urlRouterProvider) {

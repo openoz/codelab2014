@@ -11,7 +11,7 @@ module.factory("OpenDataService", ["$http", "$q", function($http, $q) {
                 .success(function (resp) {
                     deferredOpenData.resolve(resp);
                 }).error(function () {
-                    deferredOpenData.reject("Failed to load reference data for address type");
+                    deferredOpenData.reject("Failed to load data");
                 });
 
             return deferredOpenData.promise;
